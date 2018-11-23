@@ -1,0 +1,191 @@
+body{
+    background: #e1e1e1;
+    margin: auto;
+  }
+  
+  header {
+    background-color: #11dc27;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 25px 0 black;
+  }
+  header ul {
+    list-style: none;
+    text-align: right;
+    padding-right: 20px;
+  }
+  header h2{
+    color: #11dc27;
+    text-shadow: 1px 1px grey,-1px 1px grey,1px -1px grey,-1px -1px grey;
+    font-size: 30px;
+    margin-top: 7px;
+    margin-left: 10px;
+  }
+  header li {
+    display: inline-block;
+    height: 40px;
+    width: 142px;
+    text-align: center;
+    font-family: Waree;
+    line-height: 48px;
+    /* font-weight:bold; */
+    text-transform: capitalize;
+    text-shadow: 1px 1px grey,-1px 1px grey,1px -1px grey,-1px -1px grey;
+    
+  }
+  header li:hover {
+    color: whitesmoke;
+    cursor: pointer;
+  }
+  
+  header a {
+    text-decoration: none;
+    color: white;
+  }
+  header a:hover {
+    color: antiquewhite;;
+  }
+  .siteLogo{
+    flex: 0.2;
+    background: url(../images/binoculars-eyes.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    /* border: solid 1px white; */
+    border-radius: 1px;
+    height: 70px;
+    /* width: 20px; */
+    position: relative;
+    bottom: 5px;
+  }
+  .h-nav{
+    margin-top: 0;
+    display:flex;
+  }
+  nav{
+    text-align: right;
+    flex:1;
+    display: block
+  }
+  nav li{
+    display: inline;
+    margin-right: 5px;
+    margin-left: 20px;
+  }
+  #loginHeader {
+    color: #11dc27;
+    text-align: center;
+    font-family: Arial;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 1px grey;
+    font-size: 60px;
+    width: 100%;
+    padding-top: 20px;
+  
+  }
+  input.loginDetails{
+    font-family: Waree;
+    font-size: 17px;
+    color: grey;
+  }
+  
+  #loginForm {
+    margin: 0 auto;
+    padding: 10px 25px 10px;
+    width: 75%;
+    box-shadow: 6px 6px 3px lightgray;
+    text-align: center;
+    border: solid 1px #c1c1c1;
+    border-radius: 13px;
+    background: rgba(255, 255, 255, 0.85);
+    /*     background-color: #ccc;; */
+    margin-top: 0;
+    padding-top: 30px;
+  }
+  
+  .labelId {
+    color: black;
+    text-align: left;
+    font-family: Waree;
+    /* text-shadow: 1px 1px 1px black; */
+    font-size: 25px;
+    width: 63%;
+    padding: 0px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    margin-top: 30px;
+    font-weight: bold
+  }
+  .loginDetails {
+    width: 60%;
+    height: 20px;
+    border: 2px solid #a1a1a1;
+    border-radius: 8px;
+    padding: 10px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 40px;
+      background-color: #f7f7f7;
+  }
+  
+  
+  .loginDetails:hover {
+    /* margin-top: 10px; */
+    background-color: rgba(0, 0, 0, 0.1);
+    /* color: white; */
+  }
+  #loginButton {
+    margin-top: 20px;
+    box-shadow: 2px 2px 3px lightgrey;
+    width: 42%;
+    cursor: pointer;
+    height: 57px;
+    border-radius: 50px;
+    background-color: #11dc27;
+    font-family: waree;
+    font-size: 28px;
+    text-transform: uppercase;
+    color: #fff;
+    /* padding-top: 20px; */
+  }
+  #loginButton:hover {
+    background-color: darkgreen;
+    color: white;
+    box-shadow: 0 0 0 #d2d2d2;
+  }
+  #signUpLink{
+    padding-top: 20px;
+  }
+  #signUpLink h4 {
+    font-family: Waree;
+  }
+  #signUpLink a {
+    text-decoration: none;
+    color: #a9a9a9;
+  }
+  #signUpLink a:hover {
+    text-decoration: none;
+    color: dimgray;
+  }
+  
+  footer {
+    background: darkgreen;
+    height: 30px;
+    padding:auto;
+    display: flex;
+    align-items: center;
+    margin-top: 60px;
+    margin-bottom: 0;
+  }
+  #footNote {
+    margin: 0 auto;
+    text-align: center;
+    color: #fff;
+  }
+  
