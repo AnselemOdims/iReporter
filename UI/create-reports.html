@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width">
+      <meta name="description" content="A web app designed for reporting corruption and need for intervention">
+      <meta name="author" content="Odimegwu Anselem">
+    <title>iReporter | Create Report</title>
+    <link rel="stylesheet" , href="./css/create-reports.css" />
+  </head>
+  <body id="pageBody">
+    <header>
+        <div class="siteLogo">
+            <h2>iReporter</h2>
+          </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="view-reports.html">View Reports</a></li>
+          <li><a href="dashboard.html">Profile</a></li>
+          <li><a href="index.html">Logout</a></li>
+
+          
+        </ul>
+      </nav>
+    </header>
+    <div id="reportBody">
+      <div id="reportHeader"><p>New Report(s)</p></div>
+
+           <div class="reportButtonClass">
+        
+          <button class="reportButton1" onclick=" myFunction(event, 'Red-Flag');" id="defaultOpen">Red-Flag</button>
+          <button class="reportButton2" onclick="myFunction(event, 'Intervention')">Intervention</button>
+        </div>
+              
+      <div id="Red-Flag" class= "reportForm">
+        <form>
+          <h3 class="redFlag">RED-FLAG REPORT</h3>
+          <p><em>Create a report on issues or incidents that can be linked to corruption or corrupt practices</em></p>
+          <div class="formGroup">
+            <label class="labelId">Report Title</label>
+            <textarea class="reportDetails" name="body" ></textarea><br />
+
+            <label class="labelId">Report Description</label>
+            <textarea id="reportDetails" name="body" ></textarea>
+          </div>
+          <div>
+              <label class="labelId">Location: </label>
+              <span>Click on the button below to add the coordinates of the location you are reporting from</span>
+              <button id="location2" onclick= "getCoordinates()">Location</button>
+              <p ></p>
+            </div>
+             <br><br>
+       <div>
+          <label for="avatar" class="labelId">Include Media Evidence:</label>
+          <input type="file" name="avatar" accept="image/*, video/*" multiple />
+        </div>   
+          <div>
+            <input id="submitReportButton" , type="submit" , value="Submit Report" />
+          </div>
+        </form>
+      </div>
+
+      <div id="Intervention" class="reportForm">
+          <form>
+            <h3 class="inter">INTERVENTION REPORT</h3>
+            <p><em>Create a report on issues that you think needs government's intervention( e.g repair bad road sections, collapsed bridges, flooding etc)</em></p>
+            <div class="formGroup">
+              <label class="labelId">Report Title</label>
+              <textarea class="reportDetails" name="body" ></textarea><br />
+  
+              <label class="labelId">Report Description</label>
+              <textarea id="reportDetails" name="body" ></textarea>
+            </div>
+          <div>
+            <label class="labelId">Location: </label>
+            <span>Click on the button below to add the coordinates of the location you are reporting from</span>
+            <button id="location2" onclick= "getCoordinates()">Location</button>
+            <p ></p>
+          </div>
+               <br><br>
+            <div>
+            <label for="avatar" class="labelId">Include Media Evidence:</label>
+            <input type="file" name="avatar" accept="image/*, video/*" multiple />
+          </div>
+            <div>
+              <input id="submitReportButton" , type="submit" , value="Submit Report" />
+            </div>
+          </form>
+        </div>
+    </div>
+
+    <script src = "./js/create-reports.js" ></script>
+       
+  </body>
+</html>
