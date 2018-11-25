@@ -4,6 +4,7 @@
   "description": "iReporter node modules",
   "main": "index.js",
   "scripts": {
+    "test": "nyc mocha --require @babel/register --compilers js:@babel/core --timeout 10000 tests/**/*.test.js --exit",
     "babel": "babel --presets es2015 js/main.js -o build/main.bundle.js",
     "start": "nodemon --require @babel/register -- server.js"
   },
@@ -24,7 +25,9 @@
   },
   "dependencies": {
     "body-parser": "^1.18.3",
+    "chai": "^4.2.0",
     "cors": "^2.8.5",
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "mocha": "^5.2.0"
   }
 }
