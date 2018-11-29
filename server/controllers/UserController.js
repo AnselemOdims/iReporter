@@ -51,36 +51,36 @@ class UserController {
       };
 
     users.push(user);
-    console.log(user)
+    // console.log(user)
     res.status(201).send(response);
   }
 
+
   loginUser(req, res) {
-    const usersmail = users.find(use => use.email === req.body.email);
-    if (!usersmail) {
-      res.json({ status: 400, error: "Invalid email or password" });
+    let user = users.find(use => use.email === req.body.email);
+    if (!user) {
+      res.json({ status: 400, error: "Invalid Email or Password" });
       return;
   }
-  
-    let salt = bcrypt.genSaltSync(10)
-    let hashed = bcrypt.hashSync(req.body.password, salt);
+   let userpw = user.password;
+   console.log(userpw);
 
-    const pwcheck = bcrypt.compareSync(req.body.password, hashed);
+    const pwcheck = bcrypt.compareSync(req.body.password, userpw);
     if (!pwcheck) {
-      res.json({ status: 400, error: "Invalid email or password" });
+      res.json({ status: 400, error: "Invalid Email or Password" });
+      return;
     }
-    else
-       { 
-        const token = auth.authenticate(user);
+     else {const token = auth.authenticate(user);
         delete user.password;
-        // console.log(token)
-        return res.status(200).send({ status: 200, message: 'success', user, token });
+        delete user.confirmpassword;
+        console.log(token)
+        return res.status(201).send({ status: 201, data: [{ message:'Login Successful', user, token}] });
     
-      }        
+            }
   
 }
-  }
 
+}
 
 
 export default new UserController();

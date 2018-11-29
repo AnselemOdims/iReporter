@@ -1,10 +1,10 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "iReporter node modules",
-  "main": "index.js",
+  "description": "iReporter server dependencies",
+  "main": "server.js",
   "scripts": {
-    "test": "nyc mocha --require @babel/register --compilers js:@babel/core --timeout 10000 tests/**/*.test.js --exit",
+    "test": "nyc mocha --require @babel/register --compilers js:@babel/core --timeout 10000 tests/**/*test.js --exit",
     "babel": "babel --presets es2015 js/main.js -o build/main.bundle.js",
     "start": "nodemon --require @babel/register -- server.js"
   },
@@ -24,11 +24,18 @@
     "nodemon": "^1.18.6"
   },
   "dependencies": {
+    "bcrypt": "^3.0.2",
     "body-parser": "^1.18.3",
     "chai": "^4.2.0",
+    "chai-http": "^4.2.0",
     "cors": "^2.8.5",
+    "dotenv": "^6.1.0",
     "express": "^4.16.4",
+    "joi": "^14.3.0",
+    "joi-phone-number": "^2.0.14",
+    "jsonwebtoken": "^8.4.0",
     "mocha": "^5.2.0",
+    "moment": "^2.22.2",
     "nyc": "^13.1.0"
   }
 }
