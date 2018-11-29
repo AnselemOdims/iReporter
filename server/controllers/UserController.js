@@ -71,10 +71,11 @@ class UserController {
       res.json({ status: 400, error: "Invalid Email or Password" });
       return;
     }
-     else {const token = auth.authenticate(user);
+     else {
+       const token = auth.authenticate(user);
         delete user.password;
         delete user.confirmpassword;
-        console.log(token)
+        // console.log(token)
         return res.status(201).send({ status: 201, data: [{ message:'Login Successful', user, token}] });
     
             }
@@ -83,9 +84,7 @@ class UserController {
 
 }
 
-    console.log(user)
-    res.status(201).send(response);
-  }
+  
 
 
 
