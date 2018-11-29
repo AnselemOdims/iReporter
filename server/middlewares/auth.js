@@ -26,12 +26,18 @@ const auth = {
   
     verifyUserToken(req, res, next) {
       const token = req.headers['x-auth-token'];
+      
       if (!token) {
         return res.status(400).json({ status: 400, error: 'No token provided.' });
       }
       const decoded = auth.verifyToken(token);
       if (decoded.error) {
-        return res.status(400).json({ status: false, message: 'Failed to authenticate token.' });}}
+        return res.status(400).json({ status: false, message: 'Failed to authenticate token.' });}
+
+        req.decoded = decoded.payload;
+        // console.log()
+        next();
+      }
       }
 
  export default auth;    
