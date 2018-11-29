@@ -36,6 +36,7 @@
     "jsonwebtoken": "^8.4.0",
     "mocha": "^5.2.0",
     "moment": "^2.22.2",
+    "node-geocoder": "^3.22.0",
     "nyc": "^13.1.0"
   }
 }

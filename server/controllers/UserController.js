@@ -2,9 +2,7 @@ import bcrypt from 'bcrypt';
 // import moment from 'moment'
 import auth from '../middlewares/auth';
 
-const users = [
-
-];
+export const users = [];
 
 class UserController {
 
@@ -37,13 +35,13 @@ class UserController {
           isAdmin: Boolean
         };
     const token = auth.authenticate(user);
-    console.log('token',token);
+    // console.log('token',token);
     const response = {
       status : 201,
       data : [{
         id : userId , 
         email: user.email,
-        username: user.username,// red flag record primary key
+        username: user.username, 
         message : "Created new account"
            }],
       token
@@ -83,9 +81,6 @@ class UserController {
 }
 
 }
-
-  
-
 
 
 
