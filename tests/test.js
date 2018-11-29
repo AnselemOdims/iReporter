@@ -5,8 +5,10 @@ const should = chai.should();
 
 chai.use(chaiHttp);
 
+
 // User Signup Tests
-describe('signup route Controller', () => {
+describe('sign route Controller', () => {
+
     it('should return 201 for POST /signup with a valid token', (done) => {
       const values = {
         'firstname': 'John',
@@ -123,6 +125,7 @@ describe('signup route Controller', () => {
             done();
           });
       });
+
 });
 
 // User Login Tests
@@ -204,4 +207,5 @@ describe('login route Controller', () => {
         });
     });
     
+
 });
