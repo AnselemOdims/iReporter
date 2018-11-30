@@ -233,7 +233,7 @@ describe('login route Controller', () => {
           });
       });
       
-      it('should return 400 for create user endpoint with an invalid type', (done) => {
+      it('should return 400 for create red-flag endpoint with an invalid type', (done) => {
           const values = {
             'type': 'redfl ag',
             'location': 'yaba',
@@ -289,3 +289,56 @@ describe('login route Controller', () => {
         });
     
       });
+
+  // Get All Red Flags Test
+
+      describe('Get all red-flags Controller', () => {
+        it('should return 200 for GET /get-all-redflags with a valid token', (done) => {
+          const values = {
+            'createdOn': '2018-11-30T05:40:59.076Z',
+            'createdBy': '1',
+            'type': 'red-flag',
+            'location': 'yaba',
+            'status': 'draft',
+            'comment': 'Policemen extorting and intimidating bus drivers'
+          };
+          chai.request(server)
+            .get('/api/v1/get-red-flags')
+            .send(values)
+            .set('x-auth-token', token)
+            .end((err, res) => {
+              res.should.have.status(200);
+              res.should.be.json;
+              res.body.should.be.a('object');
+              res.body.should.have.property('status');
+              res.body.should.have.property('data');
+                       
+              done();
+            });
+        });
+        
+        it('should return 400 for get red flags endpoint with an invalid token', (done) => {
+            const values = {
+            'createdOn': '2018-12-30T05:40:59.076Z',
+            'createdBy': '2',
+            'type': 'red-flag',
+            'location': 'ikeja',
+            'status': 'draft',
+            'comment': 'Policemen extorting and intimidating bus drivers'
+                };
+            chai.request(server)
+              .get('/api/v1/get-red-flags')
+              .send(values)
+              .set('x-auth-token', 'gfjdgej')
+              .end((err, res) => {
+                res.should.have.status(400);
+                res.body.should.be.a('object');
+                res.body.should.have.property('status');
+                      
+                done();
+              });
+          });
+         
+          
+      
+        });
