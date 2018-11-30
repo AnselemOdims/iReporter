@@ -508,3 +508,69 @@ describe('login route Controller', () => {
     }); 
 
   });
+
+  //DELETE RED-FLAGS
+  describe('Delete red-flag Controller', () => {
+    it('should return 200 for delete /delete redflag with a valid token', (done) => {
+      const values = {
+        'createdOn': '2018-12-30T05:40:59.076Z',
+        'createdBy': '2',
+        'type': 'red-flag',
+        'location': 'yaba',
+        'comment': 'Policemen extorting and intimidating bus drivers'
+      };
+      chai.request(server)
+        .delete('/api/v1/delete-red-flag/1')
+        .send(values)
+        .set('x-auth-token', token)
+        .end((err, res) => {
+          res.should.have.status(200);
+          res.should.be.json;
+          res.body.should.be.a('object');
+          res.body.should.have.property('status');
+          res.body.should.have.property('data');
+                   
+          done();
+        });
+    });
+    it('should return 400 for delete red flag endpoint with an invalid token', (done) => {
+      const values = {
+      'createdOn': '2018-12-30T05:40:59.076Z',
+      'createdBy': '2',
+      'type': 'red-flag',
+      'location': 'ikeja',
+      'comment': 'Policemen extorting and intimidating bus drivers'
+          };
+      chai.request(server)
+        .delete('/api/v1/delete-red-flag/1')
+        .send(values)
+        .set('x-auth-token', 'gfjdgej')
+        .end((err, res) => {
+          res.should.have.status(400);
+          res.body.should.be.a('object');
+          res.body.should.have.property('status');
+                
+          done();
+        });
+    });
+    it('should return 404 for delete red flag endpoint with an invalid id', (done) => {
+      const values = {
+      'createdOn': '2018-12-30T05:40:59.076Z',
+      'createdBy': '2',
+      'type': 'red-flag',
+      'location': 'ikeja',
+      'comment': 'Policemen extorting and intimidating bus drivers'
+          };
+      chai.request(server)
+        .delete('/api/v1/delete-red-flag/ams')
+        .send(values)
+        .set('x-auth-token', token)
+        .end((err, res) => {
+          res.should.have.status(404);
+          res.body.should.be.a('object');
+          res.body.should.have.property('status');
+                
+          done();
+        });
+    }); 
+  });
