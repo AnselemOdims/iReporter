@@ -6,7 +6,8 @@
   "scripts": {
     "test": "nyc mocha --require @babel/register --compilers js:@babel/core --timeout 10000 tests/**/*test.js --exit",
     "babel": "babel --presets es2015 js/main.js -o build/main.bundle.js",
-    "start": "nodemon --require @babel/register -- server.js",
+    "start": "node --require @babel/register -- server.js",
+    "start:dev": "nodemon --require @babel/register -- server.js",
     "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "author": "Anselem Odimegwu",
