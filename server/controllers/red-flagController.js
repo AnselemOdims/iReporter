@@ -4,7 +4,7 @@ import { users } from './UserController'
 import moment from 'moment';
 
 
-const redFlagReports = [];
+export const redFlagReports = [];
               
 
 class RedflagController {
