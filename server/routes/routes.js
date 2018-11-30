@@ -24,6 +24,7 @@ const EntryRoute = (app) => {
     app.delete('/api/v1/delete-red-flag/:id', auth.verifyUserToken, RedflagController.deleteRedFlag);
 
     app.post('/api/v1/create-intervention', auth.verifyUserToken, validateInterventionReport, InterventionController.createIntervention);
+    app.get('/api/v1/get-red-flags', auth.verifyUserToken, InterventionController.getAllInterventions);
 
 
 
