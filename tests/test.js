@@ -338,7 +338,77 @@ describe('login route Controller', () => {
                 done();
               });
           });
-         
-          
-      
+              
         });
+
+      // Get single red-flag report
+
+        describe('Get single red-flag Controller', () => {
+          it('should return 200 for GET /get-single-redflag with a valid token', (done) => {
+            const values = {
+              'createdOn': '2018-11-30T05:40:59.076Z',
+              'createdBy': '1',
+              'type': 'red-flag',
+              'location': 'yaba',
+              'status': 'draft',
+              'comment': 'Policemen extorting and intimidating bus drivers'
+            };
+            chai.request(server)
+              .get('/api/v1/get-red-flag/1')
+              .send(values)
+              .set('x-auth-token', token)
+              .end((err, res) => {
+                res.should.have.status(200);
+                res.should.be.json;
+                res.body.should.be.a('object');
+                res.body.should.have.property('status');
+                res.body.should.have.property('data');
+                         
+                done();
+              });
+          });
+          
+          it('should return 400 for get single red flag endpoint with an invalid token', (done) => {
+              const values = {
+              'createdOn': '2018-12-30T05:40:59.076Z',
+              'createdBy': '2',
+              'type': 'red-flag',
+              'location': 'ikeja',
+              'status': 'draft',
+              'comment': 'Policemen extorting and intimidating bus drivers'
+                  };
+              chai.request(server)
+                .get('/api/v1/get-red-flag/1')
+                .send(values)
+                .set('x-auth-token', 'gfjdgej')
+                .end((err, res) => {
+                  res.should.have.status(400);
+                  res.body.should.be.a('object');
+                  res.body.should.have.property('status');
+                        
+                  done();
+                });
+            });
+            it('should return 404 for get single red flag endpoint with an invalid id', (done) => {
+              const values = {
+              'createdOn': '2018-12-30T05:40:59.076Z',
+              'createdBy': '2',
+              'type': 'red-flag',
+              'location': 'ikeja',
+              'status': 'draft',
+              'comment': 'Policemen extorting and intimidating bus drivers'
+                  };
+              chai.request(server)
+                .get('/api/v1/get-red-flag/ams')
+                .send(values)
+                .set('x-auth-token', token)
+                .end((err, res) => {
+                  res.should.have.status(404);
+                  res.body.should.be.a('object');
+                  res.body.should.have.property('status');
+                        
+                  done();
+                });
+            });               
+          });
+  
