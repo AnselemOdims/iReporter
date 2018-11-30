@@ -71,6 +71,19 @@ class InterventionController {
         
     }
 
+    deleteIntervention(req, res){
+        const interventionReport = interventionReports.find(report => report.id === parseInt(req.params.id));
+        if(!interventionReport){
+            res.status(404).json({ status: 404, error: "Report Not found" })
+            return; 
+            }
+        
+        const reportIndex = interventionReports.indexOf(interventionReport);
+        interventionReports.splice(reportIndex, 1)
+
+        res.status(200).send({ status: 200, data: [{ message:'Delete Successful', interventionReports}]})
+    }
+
 }
 
 export default new InterventionController();
