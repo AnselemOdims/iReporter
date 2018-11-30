@@ -577,7 +577,7 @@ describe('login route Controller', () => {
 
   // INTERVENTION TEST
 
-    // Create -flag tests
+    // Create intervention tests
     describe('create intervention Controller', () => {
       it('should return 201 for POST /create intervention with a valid token', (done) => {
         const values = {
@@ -656,3 +656,54 @@ describe('login route Controller', () => {
         });
     
       });
+
+      // Get All Intervention Reports Test
+
+      describe('Get all interventions Controller', () => {
+        it('should return 200 for GET /get-all-interventions with a valid token', (done) => {
+          const values = {
+            'createdOn': '2018-11-30T05:40:59.076Z',
+            'createdBy': '1',
+            'type': 'intervention',
+            'location': 'okoko',
+            'status': 'draft',
+            'comment': 'too many potholes on the road, it causes accidents'
+          };
+          chai.request(server)
+            .get('/api/v1/get-interventions')
+            .send(values)
+            .set('x-auth-token', token)
+            .end((err, res) => {
+              res.should.have.status(200);
+              res.should.be.json;
+              res.body.should.be.a('object');
+              res.body.should.have.property('status');
+              res.body.should.have.property('data');
+                       
+              done();
+            });
+        });
+        
+        it('should return 400 for get red flags endpoint with an invalid token', (done) => {
+            const values = {
+              'createdOn': '2018-11-30T05:40:59.076Z',
+              'createdBy': '2',
+              'type': 'intervention',
+              'location': 'okoko',
+              'status': 'draft',
+              'comment': 'too many potholes on the road, it causes accidents'
+                };
+            chai.request(server)
+              .get('/api/v1/get-interventions')
+              .send(values)
+              .set('x-auth-token', 'gfjdgej')
+              .end((err, res) => {
+                res.should.have.status(400);
+                res.body.should.be.a('object');
+                res.body.should.have.property('status');
+                      
+                done();
+              });
+          });
+              
+        });
