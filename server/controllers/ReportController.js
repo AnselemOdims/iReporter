@@ -63,6 +63,19 @@ class ReportController {
         res.status(200).send({ status: 200, data: [{redFlagReport}]})
     }
 
+    editRedFlag(req, res){
+    
+        const redFlagReport = redFlagReports.find(report => report.id === parseInt(req.params.id));
+        if(!redFlagReport){
+            res.status(404).json({ status: 404, error: "Report Not found" }) 
+            return;
+        }
+        redFlagReport.type = req.body.type;
+        redFlagReport.comment = req.body.comment;
+
+        res.status(200).send({ status: 200, data: [{ message:'Edit Successful', redFlagReport}]})
+    }
+
    
 
 

@@ -411,4 +411,100 @@ describe('login route Controller', () => {
                 });
             });               
           });
-  
+
+  //Edit Red-flag
+  describe('Edit red-flag Controller', () => {
+    it('should return 200 for put /edit redflag with a valid token', (done) => {
+      const values = {
+        'type': 'red-flag',
+        'location': 'yaba',
+        'comment': 'Policemen extorting and intimidating bus drivers'
+      };
+      chai.request(server)
+        .put('/api/v1/edit-red-flag/1')
+        .send(values)
+        .set('x-auth-token', token)
+        .end((err, res) => {
+          res.should.have.status(200);
+          res.should.be.json;
+          res.body.should.be.a('object');
+          res.body.should.have.property('status');
+          res.body.should.have.property('data');
+                   
+          done();
+        });
+    });
+    it('should return 400 for edit red-flag endpoint with an invalid type', (done) => {
+      const values = {
+        'type': 'redfl ag',
+        'location': 'yaba',
+         'comment': 'Policemen extorting and intimidating bus drivers'
+          };
+      chai.request(server)
+        .put('/api/v1/edit-red-flag/1')
+        .send(values)
+        .end((err, res) => {
+          res.should.have.status(400);
+          res.body.should.be.a('object');
+          res.body.should.have.property('status');
+          res.body.should.have.property('error');
+
+          done();
+        });
+    });
+    it('should return 400 for edit red-flag report endpoint with no comment', (done) => {
+      const values = {
+        'type': 'red-flag',
+        'location': 'yaba',
+         'comment': ''
+          };
+      chai.request(server)
+        .put('/api/v1/edit-red-flag/1')
+        .send(values)
+        .end((err, res) => {
+          res.should.have.status(400);
+          res.body.should.be.a('object');
+          res.body.should.have.property('status');
+          res.body.should.have.property('error');
+
+          done();
+        });
+    });
+    it('should return 400 for edit red flag endpoint with an invalid token', (done) => {
+      const values = {
+      'type': 'red-flag',
+      'location': 'ikeja',
+      'comment': 'Policemen extorting and intimidating bus drivers'
+          };
+      chai.request(server)
+        .put('/api/v1/edit-red-flag/1')
+        .send(values)
+        .set('x-auth-token', 'gfjdgej')
+        .end((err, res) => {
+          res.should.have.status(400);
+          res.body.should.be.a('object');
+          res.body.should.have.property('status');
+                
+          done();
+        });
+    });
+    it('should return 404 for edit red flag endpoint with an invalid id', (done) => {
+      const values = {
+      'type': 'red-flag',
+      'location': 'ikeja',
+      'comment': 'Policemen extorting and intimidating bus drivers'
+          };
+      chai.request(server)
+        .put('/api/v1/edit-red-flag/ams')
+        .send(values)
+        .set('x-auth-token', token)
+        .end((err, res) => {
+          res.should.have.status(404);
+          res.body.should.be.a('object');
+          res.body.should.have.property('status');
+                
+          done();
+        });
+    }); 
+
+  });
