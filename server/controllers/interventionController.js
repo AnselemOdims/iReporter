@@ -45,6 +45,18 @@ class InterventionController {
         
     }
 
+    getSingleIntervention(req, res){
+
+        const interventionReport = interventionReports.find(report => report.id === parseInt(req.params.id))
+
+        if(!interventionReport){
+            res.status(404).json({ status: 404, error: "Report Not found" }) 
+            return; 
+        }
+
+        res.status(200).send({ status: 200, data: [{interventionReport}]})
+    }
+
 }
 
 export default new InterventionController();
