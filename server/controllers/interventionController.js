@@ -24,7 +24,7 @@ class InterventionController {
     const response = {
             "status" : 201,
             "data" : [{
-                "id" : reportId , // red flag record primary key
+                "id" : reportId , //  record primary key
                 "message" : "Created new intervention record"
                     }
             ]
@@ -55,6 +55,19 @@ class InterventionController {
         }
 
         res.status(200).send({ status: 200, data: [{interventionReport}]})
+    }
+
+    editIntervention(req, res){
+    
+        const interventionReport = interventionReports.find(report => report.id === parseInt(req.params.id));
+        if(!interventionReport){
+            res.status(404).json({ status: 404, error: "Report Not found" }) 
+            return;
+        }
+        interventionReport.type = req.body.type;
+        interventionReport.comment = req.body.comment;
+
+        res.status(200).send({ status: 200, data: [{ message:'Edit Successful', interventionaddReport}]})
     }
 
 }

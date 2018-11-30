@@ -25,6 +25,8 @@ const EntryRoute = (app) => {
     app.post('/api/v1/create-intervention', auth.verifyUserToken, validateInterventionReport, InterventionController.createIntervention);
     app.get('/api/v1/get-interventions', auth.verifyUserToken, InterventionController.getAllInterventions);
     app.get('/api/v1/get-intervention/:id', auth.verifyUserToken, InterventionController.getSingleIntervention);
+    app.put('/api/v1/edit-intervention/:id', auth.verifyUserToken, validateInterventionReport, InterventionController.editIntervention);
+
 
 
 

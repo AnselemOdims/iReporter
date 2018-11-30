@@ -779,3 +779,101 @@ describe('login route Controller', () => {
             });
         });               
       });
+
+        //Edit Intervention report test
+
+  describe('Edit intervention Controller', () => {
+    it('should return 200 for put /edit intervention with a valid token', (done) => {
+      const values = {
+        'type': 'intervention',
+        'location': 'okoko',
+        'comment': 'too many potholes on the road, it causes accidents'
+      };
+      chai.request(server)
+        .put('/api/v1/edit-intervention/1')
+        .send(values)
+        .set('x-auth-token', token)
+        .end((err, res) => {
+          res.should.have.status(200);
+          res.should.be.json;
+          res.body.should.be.a('object');
+          res.body.should.have.property('status');
+          res.body.should.have.property('data');
+                   
+          done();
+        });
+    });
+    it('should return 400 for edit intervention endpoint with an invalid type', (done) => {
+      const values = {
+        'type': 'interve ntion',
+        'location': 'okoko',
+        'comment': 'too many potholes on the road, it causes accidents'
+          };
+      chai.request(server)
+        .put('/api/v1/edit-intervention/1')
+        .send(values)
+        .end((err, res) => {
+          res.should.have.status(400);
+          res.body.should.be.a('object');
+          res.body.should.have.property('status');
+          res.body.should.have.property('error');
+
+          done();
+        });
+    });
+    it('should return 400 for edit intervention report endpoint with no comment', (done) => {
+      const values = {
+        'type': 'intervention',
+          'location': 'okoko',
+          'comment': ''
+          };
+      chai.request(server)
+        .put('/api/v1/edit-intervention/1')
+        .send(values)
+        .end((err, res) => {
+          res.should.have.status(400);
+          res.body.should.be.a('object');
+          res.body.should.have.property('status');
+          res.body.should.have.property('error');
+
+          done();
+        });
+    });
+    it('should return 400 for edit intervention endpoint with an invalid token', (done) => {
+      const values = {
+        'type': 'intervention',
+        'location': 'okoko',
+        'comment': 'too many potholes on the road, it causes accidents'
+          };
+      chai.request(server)
+        .put('/api/v1/edit-intervention/1')
+        .send(values)
+        .set('x-auth-token', 'gfjdgej')
+        .end((err, res) => {
+          res.should.have.status(400);
+          res.body.should.be.a('object');
+          res.body.should.have.property('status');
+                
+          done();
+        });
+    });
+    it('should return 404 for edit intervention endpoint with an invalid id', (done) => {
+      const values = {
+        'type': 'intervention',
+        'location': 'okoko',
+        'comment': 'too many potholes on the road, it causes accidents'
+          };
+      chai.request(server)
+        .put('/api/v1/edit-intervention/ams')
+        .send(values)
+        .set('x-auth-token', token)
+        .end((err, res) => {
+          res.should.have.status(404);
+          res.body.should.be.a('object');
+          res.body.should.have.property('status');
+                
+          done();
+        });
+    }); 
+
+  });
