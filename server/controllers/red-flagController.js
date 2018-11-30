@@ -5,11 +5,9 @@ import moment from 'moment';
 
 
 const redFlagReports = [];
-
-// const interventionReports = [];
               
 
-class ReportController {
+class RedflagController {
 
     createRedFlag(req, res) {
         
@@ -92,4 +90,4 @@ class ReportController {
 
 }
 
-export default new ReportController();
+export default new RedflagController();
