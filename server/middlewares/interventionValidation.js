@@ -12,7 +12,7 @@ export default (req, res, next) => {
   if(values.type && !values.type.replace(/\s/g, '').length) {
       errors.type = 'type of report can not be blank'; check = false;
   }
-  if(values.type && values.type !== 'red-flag' ){
+  if(values.type && values.type !== 'intervention' ){
       errors.type = "Report should be an intervention"; check=false;
   }
  if(values.location && !values.location.replace(/\s/g, '').length) {

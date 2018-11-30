@@ -5,14 +5,12 @@ import moment from 'moment';
 
 
 const redFlagReports = [];
-
-// const interventionReports = [];
               
 
-class ReportController {
+class RedflagController {
 
     createRedFlag(req, res) {
-        // const user = users.find(use => use.id === req.decoded.id)
+        
         let userId = req.decoded.id
         let reportId = redFlagReports.length + 1;
   const reports = {
@@ -92,4 +90,4 @@ class ReportController {
 
 }
 
-export default new ReportController();
+export default new RedflagController();

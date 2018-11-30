@@ -574,3 +574,85 @@ describe('login route Controller', () => {
         });
     }); 
   });
+
+  // INTERVENTION TEST
+
+    // Create -flag tests
+    describe('create intervention Controller', () => {
+      it('should return 201 for POST /create intervention with a valid token', (done) => {
+        const values = {
+          'type': 'intervention',
+          'location': 'okoko',
+          'comment': 'too many potholes on the road, it causes accidents'
+        };
+        chai.request(server)
+          .post('/api/v1/create-intervention')
+          .send(values)
+          .set('x-auth-token', token)
+          .end((err, res) => {
+            res.should.have.status(201);
+            res.should.be.json;
+            res.body.should.be.a('object');
+            res.body.should.have.property('status');
+            res.body.should.have.property('data');
+                     
+            done();
+          });
+      });
+      
+      it('should return 400 for create intervention endpoint with an invalid type', (done) => {
+          const values = {
+            'type': 'interven  tion',
+            'location': 'okoko',
+            'comment': 'too many potholes on the road, it causes accidents'
+              };
+          chai.request(server)
+            .post('/api/v1/create-intervention')
+            .send(values)
+            .end((err, res) => {
+              res.should.have.status(400);
+              res.body.should.be.a('object');
+              res.body.should.have.property('status');
+              res.body.should.have.property('error');
+    
+              done();
+            });
+        });
+        it('should return 400 for create intervention report endpoint with no comment', (done) => {
+          const values = {
+            'type': 'intervention',
+            'location': 'okoko',
+             'comment': ''
+              };
+          chai.request(server)
+            .post('/api/v1/create-intervention')
+            .send(values)
+            .end((err, res) => {
+              res.should.have.status(400);
+              res.body.should.be.a('object');
+              res.body.should.have.property('status');
+              res.body.should.have.property('error');
+    
+              done();
+            });
+        });
+        it('should return 400 for create red-flag endpoint with no type', (done) => {
+          const values = {
+            'type': '',
+            'location': 'okoko',
+            'comment': 'too many potholes on the road, it causes accidents'
+              };
+          chai.request(server)
+            .post('/api/v1/create-intervention')
+            .send(values)
+            .end((err, res) => {
+              res.should.have.status(400);
+              res.body.should.be.a('object');
+              res.body.should.have.property('status');
+              res.body.should.have.property('error');
+    
+              done();
+            });
+        });
+    
+      });
