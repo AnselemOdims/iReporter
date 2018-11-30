@@ -1,6 +1,7 @@
 
 import UserController from '../controllers/UserController'
 import ReportController from '../controllers/ReportController'
+import ReportController from '../controllers/ReportController'
 import validateRegisterUser from '../middlewares/registerValidation'
 import validateRedFlagReport from '../middlewares/redflagValidation'
 import validateLoginUser from '../middlewares/loginValidation'
