@@ -15,6 +15,8 @@ import auth from '../middlewares/auth';
 const EntryRoute = (app) => {
     app.post('/api/v1/signup', validateRegisterUser, UserController.createUser);
     app.post('/api/v1/login', validateLoginUser, UserController.loginUser);
+    app.get('/api/v1/get-user/:id', auth.verifyUserToken, UserController.getUser);
+
 
     app.post('/api/v1/create-red-flag', auth.verifyUserToken, validateRedFlagReport, RedflagController.createRedFlag);
     app.get('/api/v1/get-red-flags', auth.verifyUserToken, RedflagController.getAllRedFlags);

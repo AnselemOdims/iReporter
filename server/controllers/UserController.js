@@ -1,6 +1,8 @@
 import bcrypt from 'bcrypt';
-// import moment from 'moment'
 import auth from '../middlewares/auth';
+import { redFlagReports } from './red-flagController'
+import { interventionReports } from './interventionController'
+
 
 export const users = [];
 
@@ -78,7 +80,22 @@ class UserController {
     
             }
   
-}
+    }
+
+    getUser(req, res){
+      let user = users.find(use => use.id === parseInt(req.params.id));
+    if (!user) {
+      res.json({ status: 400, error: "Something went wrong, try later" });
+      return;
+  }
+     let report = redFlagReports.find(use => use.createdBy === parseInt(req.params.id) );
+     let reports= interventionReports.find(used => used.createdBy === parseInt(req.params.id))
+     delete user.password
+     delete user.confirmpassword
+
+
+     res.status(200).send({ status: 200, data: [{ message: 'success', user, redflagreports: report, interventionreports: reports}] });
+    }
 
 }
 

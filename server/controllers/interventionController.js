@@ -1,8 +1,8 @@
-
+import { users } from './UserController'
 import auth from '../middlewares/auth';
 import moment from 'moment';
 
-const interventionReports = [];
+export const interventionReports = [];
 
 class InterventionController {
 

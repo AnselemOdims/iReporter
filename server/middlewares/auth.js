@@ -35,7 +35,7 @@ const auth = {
         return res.status(400).json({ status: false, message: 'Failed to authenticate token.' });}
 
         req.decoded = decoded.payload;
-        // console.log()
+        
         next();
       }
       }
