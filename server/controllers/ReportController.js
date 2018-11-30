@@ -51,6 +51,18 @@ class ReportController {
         
     }
 
+    getSingleRedFlag(req, res){
+
+        const redFlagReport = redFlagReports.find(report => report.id === parseInt(req.params.id))
+
+        if(!redFlagReport){
+            res.status(404).json({ status: 404, error: "Report Not found" }) 
+            return; 
+        }
+
+        res.status(200).send({ status: 200, data: [{redFlagReport}]})
+    }
+
    
 
 
