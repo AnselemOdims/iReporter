@@ -35,6 +35,16 @@ class InterventionController {
         res.status(201).json(response)
     }
 
+    getAllInterventions(req, res){
+        let userId = req.decoded.id
+        if(!userId){  
+            res.status(404).json({ status: 404, error: "Report Not found" })
+            }
+
+        else{res.status(200).send({ status: 200, data: [{interventionReports}]})}  
+        
+    }
+
 }
 
 export default new InterventionController();
