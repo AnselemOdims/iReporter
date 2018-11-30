@@ -67,7 +67,8 @@ class InterventionController {
         interventionReport.type = req.body.type;
         interventionReport.comment = req.body.comment;
 
-        res.status(200).send({ status: 200, data: [{ message:'Edit Successful', interventionaddReport}]})
+        res.status(200).send({ status: 200, data: [{ message:'Edit Successful', interventionReport}]})
+        
     }
 
 }
