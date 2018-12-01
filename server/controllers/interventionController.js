@@ -38,7 +38,7 @@ class InterventionController {
     getAllInterventions(req, res){
         let userId = req.decoded.id
         if(!userId){  
-            res.status(404).json({ status: 404, error: "Report Not found" })
+            res.status(404).json({ status: 404, error: "Not found" })
             }
 
         else{res.status(200).send({ status: 200, data: [{interventionReports}]})}  
@@ -50,7 +50,7 @@ class InterventionController {
         const interventionReport = interventionReports.find(report => report.id === parseInt(req.params.id))
 
         if(!interventionReport){
-            res.status(404).json({ status: 404, error: "Report Not found" }) 
+            res.status(404).json({ status: 404, error: "Not found" }) 
             return; 
         }
 
@@ -61,27 +61,37 @@ class InterventionController {
     
         const interventionReport = interventionReports.find(report => report.id === parseInt(req.params.id));
         if(!interventionReport){
-            res.status(404).json({ status: 404, error: "Report Not found" }) 
+            res.status(404).json({ status: 404, error: "Not found" }) 
             return;
         }
-        interventionReport.type = req.body.type;
+        let reportId = interventionReport.id;
         interventionReport.comment = req.body.comment;
 
-        res.status(200).send({ status: 200, data: [{ message:'Edit Successful', interventionReport}]})
+        res.status(200).send({ status: 200, data: [{ id: reportId, message:'Updated intervention record’s comment', interventionReport}]})
         
     }
 
     deleteIntervention(req, res){
         const interventionReport = interventionReports.find(report => report.id === parseInt(req.params.id));
         if(!interventionReport){
-            res.status(404).json({ status: 404, error: "Report Not found" })
+            res.status(404).json({ status: 404, error: "Not found" })
             return; 
             }
-        
+        let reportId = interventionReport.id;
         const reportIndex = interventionReports.indexOf(interventionReport);
         interventionReports.splice(reportIndex, 1)
 
-        res.status(200).send({ status: 200, data: [{ message:'Delete Successful', interventionReports}]})
+        res.status(200).send({ status: 200, data: [{ id: reportId, message:'intervention record has been deleted', interventionReports}]})
+    }
+    changeLocation(req, res){
+        const interventionReport = interventionReports.find(report => report.id === parseInt(req.params.id));
+        if(!interventionReport){
+            res.status(404).json({ status: 404, error: "Not found" })
+            return; 
+            }
+            let reportId = interventionReport.id;
+            interventionReport.location = req.body.location;
+            res.status(200).send({ status: 200, data: [{ id: reportId, message:'Updated intervention record’s location', interventionReport}]})
     }
 
 }
