@@ -6,7 +6,7 @@
   "scripts": {
     "test": "nyc mocha --require @babel/register --compilers js:@babel/core --timeout 10000 tests/**/*test.js --exit",
     "babel": "babel --presets es2015 js/main.js -o build/main.bundle.js",
-    "start": "node --exec babel-node -- server.js",
+    "start": "nodemon --exec babel-node -- server.js",
     "start:dev": "nodemon --require @babel/register -- server.js",
     "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
@@ -20,7 +20,7 @@
     "babel-core": "^7.0.0-0",
     "babel-preset-es2015": "^6.24.1",
     "babel-register": "^6.26.0",
-    "@babel/node": "^7.0.0",
+    "@babel/node": "7.0.0",
     "coveralls": "^3.0.2",
     "eslint": "^5.9.0",
     "eslint-config-airbnb-base": "^13.1.0",
