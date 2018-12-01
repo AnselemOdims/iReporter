@@ -42,7 +42,7 @@ class RedflagController {
     getAllRedFlags(req, res){
         let userId = req.decoded.id
         if(!userId){  
-            res.status(404).json({ status: 404, error: "Report Not found" })
+            res.status(404).json({ status: 404, error: "Not found" })
             }
 
         else{res.status(200).send({ status: 200, data: [{redFlagReports}]})}  
@@ -54,10 +54,10 @@ class RedflagController {
         const redFlagReport = redFlagReports.find(report => report.id === parseInt(req.params.id))
 
         if(!redFlagReport){
-            res.status(404).json({ status: 404, error: "Report Not found" }) 
+            res.status(404).json({ status: 404, error: "Not found" }) 
             return; 
         }
-
+        
         res.status(200).send({ status: 200, data: [{redFlagReport}]})
     }
 
@@ -65,26 +65,37 @@ class RedflagController {
     
         const redFlagReport = redFlagReports.find(report => report.id === parseInt(req.params.id));
         if(!redFlagReport){
-            res.status(404).json({ status: 404, error: "Report Not found" }) 
+            res.status(404).json({ status: 404, error: "Not found" }) 
             return;
         }
-        redFlagReport.type = req.body.type;
+        let reportId = redFlagReport.id;
         redFlagReport.comment = req.body.comment;
 
-        res.status(200).send({ status: 200, data: [{ message:'Edit Successful', redFlagReport}]})
+        res.status(200).send({ status: 200, data: [{ id: reportId, message:'Updated red-flag record’s comment', redFlagReport}]})
     }
 
     deleteRedFlag(req, res){
         const redFlagReport = redFlagReports.find(report => report.id === parseInt(req.params.id));
         if(!redFlagReport){
-            res.status(404).json({ status: 404, error: "Report Not found" })
+            res.status(404).json({ status: 404, error: "Not found" })
             return; 
             }
-        
+        let reportId = redFlagReport.id;
         const reportIndex = redFlagReports.indexOf(redFlagReport);
         redFlagReports.splice(reportIndex, 1)
 
-        res.status(200).send({ status: 200, data: [{ message:'Delete Successful', redFlagReports}]})
+        res.status(200).send({ status: 200, data: [{ id: reportId, message:'red-flag record has been deleted', redFlagReports}]})
+    }
+
+    changeLocation(req, res){
+        const redFlagReport = redFlagReports.find(report => report.id === parseInt(req.params.id));
+        if(!redFlagReport){
+            res.status(404).json({ status: 404, error: "Not found" })
+            return; 
+            }
+            let reportId = redFlagReport.id;
+            redFlagReport.location = req.body.location;
+            res.status(200).send({ status: 200, data: [{ id: reportId, message:'Updated red-flag record’s location', redFlagReport}]})
     }
 
 

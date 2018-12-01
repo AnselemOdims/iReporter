@@ -408,14 +408,14 @@ describe('login route Controller', () => {
 
   //Edit Red-flag
   describe('Edit red-flag Controller', () => {
-    it('should return 200 for put /edit redflag with a valid token', (done) => {
+    it('should return 200 for patch /edit redflag with a valid token', (done) => {
       const values = {
         'type': 'red-flag',
         'location': 'yaba',
         'comment': 'Policemen extorting and intimidating bus drivers'
       };
       chai.request(server)
-        .put('/api/v1/edit-red-flag/1')
+        .patch('/api/v1/red-flags/1/comment')
         .send(values)
         .set('x-auth-token', token)
         .end((err, res) => {
@@ -435,7 +435,7 @@ describe('login route Controller', () => {
          'comment': 'Policemen extorting and intimidating bus drivers'
           };
       chai.request(server)
-        .put('/api/v1/edit-red-flag/1')
+        .patch('/api/v1/red-flags/1/comment')
         .send(values)
         .end((err, res) => {
           res.should.have.status(400);
@@ -453,7 +453,7 @@ describe('login route Controller', () => {
          'comment': ''
           };
       chai.request(server)
-        .put('/api/v1/edit-red-flag/1')
+        .patch('/api/v1/red-flags/1/comment')
         .send(values)
         .end((err, res) => {
           res.should.have.status(400);
@@ -471,7 +471,7 @@ describe('login route Controller', () => {
       'comment': 'Policemen extorting and intimidating bus drivers'
           };
       chai.request(server)
-        .put('/api/v1/edit-red-flag/1')
+        .patch('/api/v1/red-flags/1/comment')
         .send(values)
         .set('x-auth-token', 'gfjdgej')
         .end((err, res) => {
@@ -489,7 +489,7 @@ describe('login route Controller', () => {
       'comment': 'Policemen extorting and intimidating bus drivers'
           };
       chai.request(server)
-        .put('/api/v1/edit-red-flag/ams')
+        .patch('/api/v1/red-flags/ams/comment')
         .send(values)
         .set('x-auth-token', token)
         .end((err, res) => {
@@ -567,6 +567,66 @@ describe('login route Controller', () => {
           done();
         });
     }); 
+  });
+
+  // Change Location
+  describe('Change Location Controller', () => {
+      
+    it('should return 400 for change location  endpoint with no location', (done) => {
+      const values = {
+        'type': 'red-flag',
+        'location': '',
+         'comment': 'Policemen extorting and intimidating bus drivers'
+          };
+      chai.request(server)
+        .patch('/api/v1/red-flags/1/location')
+        .send(values)
+        .end((err, res) => {
+          res.should.have.status(400);
+          res.body.should.be.a('object');
+          res.body.should.have.property('status');
+          res.body.should.have.property('error');
+
+          done();
+        });
+    });
+    it('should return 400 for change location endpoint with an invalid token', (done) => {
+      const values = {
+      'type': 'red-flag',
+      'location': 'ikeja',
+      'comment': 'Policemen extorting and intimidating bus drivers'
+          };
+      chai.request(server)
+        .patch('/api/v1/red-flags/1/location')
+        .send(values)
+        .set('x-auth-token', 'gfjdgej')
+        .end((err, res) => {
+          res.should.have.status(400);
+          res.body.should.be.a('object');
+          res.body.should.have.property('status');
+                
+          done();
+        });
+    });
+    it('should return 404 for change location endpoint with an invalid id', (done) => {
+      const values = {
+      'type': 'red-flag',
+      'location': 'ikeja',
+      'comment': 'Policemen extorting and intimidating bus drivers'
+          };
+      chai.request(server)
+        .patch('/api/v1/red-flags/ams/location')
+        .send(values)
+        .set('x-auth-token', token)
+        .end((err, res) => {
+          res.should.have.status(404);
+          res.body.should.be.a('object');
+          res.body.should.have.property('status');
+                
+          done();
+        });
+    }); 
+
   });
 
   // INTERVENTION TEST
@@ -737,14 +797,14 @@ describe('login route Controller', () => {
         //Edit Intervention report test
 
   describe('Edit intervention Controller', () => {
-    it('should return 200 for put /edit intervention with a valid token', (done) => {
+    it('should return 200 for patch /edit intervention with a valid token', (done) => {
       const values = {
         'type': 'intervention',
         'location': 'okoko',
         'comment': 'too many potholes on the road, it causes accidents'
       };
       chai.request(server)
-        .put('/api/v1/edit-intervention/1')
+        .patch('/api/v1/interventions/1/comment')
         .send(values)
         .set('x-auth-token', token)
         .end((err, res) => {
@@ -757,24 +817,7 @@ describe('login route Controller', () => {
           done();
         });
     });
-    it('should return 400 for edit intervention endpoint with an invalid type', (done) => {
-      const values = {
-        'type': 'interve ntion',
-        'location': 'okoko',
-        'comment': 'too many potholes on the road, it causes accidents'
-          };
-      chai.request(server)
-        .put('/api/v1/edit-intervention/1')
-        .send(values)
-        .end((err, res) => {
-          res.should.have.status(400);
-          res.body.should.be.a('object');
-          res.body.should.have.property('status');
-          res.body.should.have.property('error');
 
-          done();
-        });
-    });
     it('should return 400 for edit intervention report endpoint with no comment', (done) => {
       const values = {
         'type': 'intervention',
@@ -782,7 +825,7 @@ describe('login route Controller', () => {
           'comment': ''
           };
       chai.request(server)
-        .put('/api/v1/edit-intervention/1')
+        .patch('/api/v1/interventions/1/comment')
         .send(values)
         .end((err, res) => {
           res.should.have.status(400);
@@ -800,7 +843,7 @@ describe('login route Controller', () => {
         'comment': 'too many potholes on the road, it causes accidents'
           };
       chai.request(server)
-        .put('/api/v1/edit-intervention/1')
+        .patch('/api/v1/interventions/1/comment')
         .send(values)
         .set('x-auth-token', 'gfjdgej')
         .end((err, res) => {
@@ -818,7 +861,7 @@ describe('login route Controller', () => {
         'comment': 'too many potholes on the road, it causes accidents'
           };
       chai.request(server)
-        .put('/api/v1/edit-intervention/ams')
+        .patch('/api/v1/interventions/ams/comment')
         .send(values)
         .set('x-auth-token', token)
         .end((err, res) => {
@@ -877,4 +920,65 @@ describe('login route Controller', () => {
           
         });
     }); 
+  });
+
+  // Change Location
+
+  describe('Change Location Controller', () => {
+   
+    it('should return 400 for change location endpoint with no location', (done) => {
+      const values = {
+        'type': 'intervention',
+          'location': '',
+          'comment': 'too many potholes on the road, it causes accidents'
+          };
+      chai.request(server)
+        .patch('/api/v1/interventions/1/location')
+        .send(values)
+        .end((err, res) => {
+          res.should.have.status(400);
+          res.body.should.be.a('object');
+          res.body.should.have.property('status');
+          res.body.should.have.property('error');
+
+          done();
+        });
+    });
+    it('should return 400 for change location endpoint with an invalid token', (done) => {
+      const values = {
+        'type': 'intervention',
+        'location': 'okoko',
+        'comment': 'too many potholes on the road, it causes accidents'
+          };
+      chai.request(server)
+        .patch('/api/v1/interventions/1/location')
+        .send(values)
+        .set('x-auth-token', 'gfjdgej')
+        .end((err, res) => {
+          res.should.have.status(400);
+          res.body.should.be.a('object');
+          res.body.should.have.property('status');
+                
+          done();
+        });
+    });
+    it('should return 404 for change location endpoint with an invalid id', (done) => {
+      const values = {
+        'type': 'intervention',
+        'location': 'okoko',
+        'comment': 'too many potholes on the road, it causes accidents'
+          };
+      chai.request(server)
+        .patch('/api/v1/interventions/ams/location')
+        .send(values)
+        .set('x-auth-token', token)
+        .end((err, res) => {
+          res.should.have.status(404);
+          res.body.should.be.a('object');
+          res.body.should.have.property('status');
+                
+          done();
+        });
+    }); 
+
   });
