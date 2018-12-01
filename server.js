@@ -20,7 +20,7 @@ app.use(bodyparser.urlencoded({ extended:false }));
 routes(app)
 
 app.get('/', (req, res) => {
-    res.send("Hello, there. Welcome to the iReporter page.")
+    res.send("Hello, there. Welcome to the iReporter page. ")
 })
 
 
