@@ -19,8 +19,8 @@ app.use(bodyparser.urlencoded({ extended:false }));
 
 routes(app)
 
-app.get('/', function(req, res){
-    res.send("Hello, there")
+app.get('/', (req, res) => {
+    res.send("Hello, there. Welcome to the iReporter page. ")
 })
 
 
