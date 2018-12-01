@@ -11,6 +11,9 @@
   },
   "author": "Anselem Odimegwu",
   "license": "ISC",
+  "engines": {
+    "node": "10.13.0"
+  },
   "devDependencies": {
     "@babel/core": "^7.1.6",
     "@babel/preset-env": "^7.1.6",

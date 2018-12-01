@@ -64,7 +64,7 @@ class UserController {
       return;
   }
    let userpw = user.password;
-   console.log(userpw);
+  //  console.log(userpw);
 
     const pwcheck = bcrypt.compareSync(req.body.password, userpw);
     if (!pwcheck) {
