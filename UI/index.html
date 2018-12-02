@@ -17,22 +17,16 @@
           </div>
           
         </div>
-          <nav>
+          <nav class="main-nav" id="nav-bar">
             <div class="nav-item"><a href="#">Home</a></div>
-            <div class="nav-item dropdown">
-              <a role="button" class="dropButton">Accounts</a>
-              <div class="dropContent">
-                <a role="button" href="signup.html">Sign up</a>
-                <a role="button" href="login.html">Log in</a>
-              </div>
+             <div class="nav-item"><a role="button" href="signup.html">Sign up</a></div>
+             <div class="nav-item"><a role="button" href="login.html">Log in</a></div>
+             <div class="nav-item"><a role="button" href="create-report.html">Create Report</a></div>
+             <div class="nav-item"><a role="button" href="#">View Reports</a></div>
+            <div class="icon"><a href="javascript:void(0);"
+                                     onclick="show_nav()">
+              <i>&#9776;</i></a>
             </div>
-            <div class="nav-item dropdown">
-            <a role="button" class="dropButton">Reports</a>
-            <div class="dropContent">
-                <a role="button" href="create-report.html">Create Report</a>
-                <a role="button" href="#">View Reports</a>
-              </div>
-          </div>
             
           </nav>
       </header>
@@ -43,7 +37,7 @@
              </h1>
              <h4>Help the society curb the menace of corruption by being the eyes on ground</h4>
              <p><em>Also help improve livelihood by reporting on issues that affect the populace</em></p>
-             <p><em>Be rest assured that your identity is proctected</em></p>
+             <p><em>Be rest assured that your identity is protected</em></p>
 
             <div class="blurContent">
               <h3></h3>
@@ -91,7 +85,7 @@
               <li>Identity Theft</li>
               <li>...and other related activites</li>
             </ul>
-            <div class="startlinkContainer u-center-item"><a href="signup.html" class="startLink">Start Reporting &rarr;</a></div>
+            <div class="startlinkContainer u-center-item"><a href="signup.html" class="startLink">Start Reporting</a></div>
           </div>
           <div class="extras">
             <h3>Intervention Records</h3>
@@ -106,7 +100,8 @@
               <li>Insecurity </li>
               <li>...and other related activities </li>
             </ul>
-            <div class="startlinkContainer u-center-item"><a href="signup.html" class="startLink">Start Reporting &rarr;</a></div>
+            
+            <div class="startlinkContainer u-center-item"><a href="signup.html" class="startLink">Start Reporting</a></div>
           </div>
           
         </div>
@@ -117,5 +112,19 @@
 
 
 <footer><p id="footNote">Copyright &copy; 2018- 2020 iReporter</p></footer>
+
+  <script>
+      function show_nav() {
+          let nav_items1 = document.getElementById('nav-bar');
+          if (nav_items1.className === 'main-nav'){
+              nav_items1.className += ' responsive';
+;
+          } else{
+              nav_items1.className = 'main-nav';
+
+          }
+
+     }
+  </script>
 </body>
 </html>

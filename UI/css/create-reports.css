@@ -1,0 +1,323 @@
+body{
+    margin: 0;
+    font-family: NanumGothic;
+    background: url("../images/robot.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+  .banner{
+    height:390px;
+  }
+  header {
+    background-color: #11dc27;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 25px 0 black;
+  }
+  header ul {
+    list-style: none;
+    text-align: right;
+    padding-right: 10px;
+  }
+  
+  header li {
+    display: inline-block;
+    height: 40px;
+    width: 142px;
+    text-align: center;
+    font-family: Waree;
+    line-height: 48px;
+    /* font-weight:bold; */
+    text-transform: capitalize;
+    text-shadow: 1px 1px grey,-1px 1px grey,1px -1px grey,-1px -1px grey;
+  }
+  header li:hover {
+    color: whitesmoke;
+    cursor: pointer;
+  }
+  
+  header a {
+    text-decoration: none;
+    color: white;
+  }
+  header a:hover {
+    color: antiquewhite;;
+  }
+  .siteLogo{
+    flex: 1;
+    background: url(../images/binoculars-eyes.jpg);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 150px;
+    /* border: solid 1px white; */
+    border-radius: 1px;
+    height: 70px;
+    width: 20%;
+    position: relative;
+    bottom: 5px;
+    }
+
+  
+  header h2{
+    color: #11dc27;
+  text-shadow: 1px 1px grey,-1px 1px grey,1px -1px grey,-1px -1px grey;
+  font-size: 30px;
+  margin-top: 7px;
+  margin-left: 10px;
+  }
+  
+  .h-nav{
+    margin-top: 0;
+    display:flex;
+  }
+  nav{
+    text-align: right;
+    flex:1;
+  }
+  nav li{
+    display: inline;
+    margin-right: 15px;
+  }
+  .title{
+    text-align: center;
+    margin-top: 6%;
+  }
+  .title h1{
+    text-shadow: 1px 1px 1px #d2d2d2, 0.5px 0.5px 0.5px white;
+  }
+ 
+ 
+  #reportHeader {
+    color: #11dc27;
+    text-align: center;
+    font-family: Waree;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 1px grey;
+    font-size: 40px;
+    width: 100%;
+padding-top: 25px
+  }
+  #reportHeader p{
+    margin-bottom: 30px;
+  }
+
+  .reportButtonClass{
+    margin: 0 auto;
+    padding: 5px 25px 25px;
+    width: 75%;
+    text-align: center;
+    margin-top: 0;
+  }
+
+  .reportButton1{
+    margin-top: 10px;
+    /* box-shadow: 2px 2px 3px lightgrey; */
+    width: 150px;
+    cursor: pointer;
+    height: 42px;
+    border-radius: 7px;
+    background-color: red;
+    font-family: waree;
+    font-size: 17px;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 20px;
+    margin-left: 10px;
+  }
+  .reportButton2{
+    margin-top: 10px;
+    /* box-shadow: 2px 2px 3px lightgrey; */
+    width: 150px;
+    cursor: pointer;
+    height: 42px;
+    border-radius: 7px;
+    background-color: #11dc27;
+    font-family: Waree;
+    font-size: 17px;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 20px;
+    /* margin-left: 10px; */
+  }
+  #reportHeaderDesc {
+    font-size: 18px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .reportForm {
+    margin: 0 auto;
+    padding: 20px 25px 25px;
+    width: 75%;
+    box-shadow: 6px 6px 3px lightgray;
+    text-align: center;
+    border: solid 1px #c1c1c1;
+    border-radius: 13px;
+    background: rgba(255, 255, 255, 0.85);
+    /*     background-color: #ccc;; */
+    margin-top: 0;
+  }
+
+  
+  #reportForm2 {
+    margin: 0 auto;
+    padding: 20px 25px 25px;
+    width: 75%;
+    box-shadow: 6px 6px 3px lightgray;
+    text-align: center;
+    border: solid 1px #c1c1c1;
+    border-radius: 13px;
+    background: rgba(255, 255, 255, 0.85);
+    /*     background-color: #ccc;; */
+    margin-top: 0;
+  }
+  h3.redFlag {
+      font-size: 30px;
+      color: red;
+      font-family: Waree;
+  }
+
+  h3.inter {
+    font-size: 30px;
+    color: green;
+    font-family: Waree;
+}
+  
+  .labelId {
+    color: black;
+    text-align: left;
+    font-family: Waree;
+    /*text-shadow: 1px 1px 1px black;*/
+    font-size: 22px;
+    width: 85%;
+    padding: 0px;
+    display: block;
+    margin: 0 auto;
+    /*margin-bottom: 10px;*/
+  }
+  
+  .formGroup label:after {
+    content: "*";
+    display: inline;
+    font-size: 18px;
+    color: red;
+  }
+  
+  #reportDetails {
+    width: 60%;
+    height: 200px;
+    border: 1px solid #c1c1c1;
+    border-radius: 4px;
+    padding: 10px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    background-color: rgba(225, 225, 225, 0.6);
+    padding-bottom: 50px;
+    font-family: Waree;
+    font-size: 16px;
+  }
+  
+  .reportDetails {
+    width: 60%;
+    height: 25px;
+    border: 1px solid #c1c1c1;
+    border-radius: 4px;
+    padding: 10px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    background-color: rgba(204, 204, 204, 0.6);
+    font-family: Waree;
+    font-size: 16px;
+  }
+
+  .reportSelect {
+    width: 60%;
+    height: 50px;
+    border: 2px solid #c1c1c1;
+    border-radius: 10px;
+    padding: 10px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    background-color: rgba(204, 204, 204, 0.6);
+  }
+
+  #location2 {
+    margin-top: 10px;
+      /* box-shadow: 2px 2px 3px lightgrey; */
+      width: 10%;
+      cursor: pointer;
+      height: 35px;
+      border-radius: 10px;
+      background-color: #11dc27;
+      font-family: Waree;
+      font-size: 24px;
+      /* text-transform: uppercase; */
+      /* font-weight: bold; */
+      color: #fff;
+  }
+  #location2:hover {
+    background-color: gray;
+    color: white;
+    box-shadow: 0 0 0 #d2d2d2;
+  }
+  
+  #submitReportButton {
+    margin-top: 30px;
+      box-shadow: 2px 2px 3px lightgrey;
+      width: 30%;
+      cursor: pointer;
+      height: 40px;
+      border-radius: 50px;
+      background-color: #11dc27;
+      font-family: Waree;
+      font-size: 24px;
+      text-transform: uppercase;
+      /* font-weight: bold; */
+      color: #fff;
+  }
+  #submitReportButton:hover {
+    background-color: darkgreen;
+    color: white;
+    box-shadow: 0 0 0 #d2d2d2;
+  }
+ 
+  
+  .reportOption {
+    font-size: 20px;
+    color: white;
+    background-color: #ccc;
+    border-radius: 10px;
+    border: 2px solid #c1c1c1;
+  }
+  
+  .reportlabelId {
+    color: black;
+    text-align: left;
+    font-family: Waree;
+    text-shadow: 1px 1px 1px black;
+    font-size: 28px;
+    width: 60%;
+    padding: 0px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+  
+  .form_main{
+    display: flex;
+    width: 87%;
+    margin: 0 auto;
+  }
+  .form_inputs{
+    flex:1;
+  }
+ 
+  

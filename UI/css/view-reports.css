@@ -1,0 +1,86 @@
+header {
+    background-color: #11dc27;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 25px 0 black;
+  }
+  header ul {
+    list-style: none;
+    text-align: center;
+    padding-left: 600px;
+  }
+  header h2{
+    color: #11dc27;
+    text-shadow: 1px 1px grey,-1px 1px grey,1px -1px grey,-1px -1px grey;
+    font-size: 30px;
+    margin-top: 7px;
+    margin-left: 10px;
+  }
+  header li {
+    display: inline-block;
+    height: 40px;
+    width: 100px;
+    text-align: center;
+    font-family: Waree;
+    line-height: 48px;
+    /* font-weight:bold; */
+    text-transform: capitalize;
+    text-shadow: 1px 1px grey,-1px 1px grey,1px -1px grey,-1px -1px grey;
+  }
+  header li:hover {
+    color: whitesmoke;
+    cursor: pointer;
+  }
+  
+  header a {
+    text-decoration: none;
+    color: white;
+    padding: none;
+  }
+  header a:hover {
+    color: antiquewhite;;
+  }
+  .siteLogo{
+    flex: 1;
+    background: url(../images/binoculars-eyes.jpg);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 150px;
+    /* border: solid 1px white; */
+    border-radius: 1px;
+    height: 70px;
+    width: 20%;
+    position: relative;
+    bottom: 5px;
+  }
+  
+  #postedReport {
+    margin-top: 50px;
+    padding: 20px 15px 35px;
+    width: 90%;
+    /* text-align: center; */
+    border: solid 1px #c1c1c1;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.85);
+    background-color: #ccc;
+    margin-bottom: 20px;
+  }
+  #dashboardHeader {
+    
+    color: #11dc27;
+    text-align: center;
+    font-family: Waree;
+    text-shadow: 1px 1px 1px black;
+    font-size: 50px;
+    width: 100%;
+    margin: 0 auto;
+    /* padding: 5px; */
+    padding-top: 40px;
+    padding-bottom: 20px;
+    margin-top: 50px;
+  }
