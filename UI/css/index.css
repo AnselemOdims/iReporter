@@ -1,13 +1,8 @@
-@font-face {
-  font-family: barbatrick;
-  src: url(../fonts/barbatrick.ttf);
-}
-@font-face {
-  font-family: MosaicCaps;
-  src: url(../fonts/MosaicCaps.ttf);
-}
+@import url('https://fonts.googleapis.com/css?family=Montserrat|PT+Serif|Quicksand|Raleway|Roboto');
+
 body{
   margin: 0;
+  font-family: "Raleway"
 }
 header {
   background-color: #11dc27;
@@ -23,24 +18,24 @@ header {
 header ul {
   list-style: none;
   text-align: center;
-  padding-left: 700px;
+  padding-left: 600px;
 }
 header h2{
   color: #11dc27;
   text-shadow: 1px 1px grey,-1px 1px grey,1px -1px grey,-1px -1px grey;
   font-size: 30px;
   margin-top: 7px;
-  /* font-family: MosaicCaps; */
   padding: 8px 4px 10px 2px;
 }
 .nav-item {
   display: inline-block;
-  width: 142px;
+  width: 100px;
   text-align: center;
-  font-family: Waree;
+  font-family: 'Raleway';
   line-height: 48px;
-  /* font-weight:bold; */
   text-shadow: 1px 1px grey,-1px 1px grey,1px -1px grey,-1px -1px grey;
+  /* transition: width 1s;
+  transition-timing-function: cubic-bezier(0.5, 1.0, 1.0, 0.1); */
 }
 
 header a {
@@ -50,6 +45,7 @@ header a {
 header a:hover {
   color: darkgreen;
   text-shadow: 0 0 0 white;
+  width:89px;
 }
 .logoContainer{
   flex:2;
@@ -63,7 +59,7 @@ header a:hover {
   /* border: solid 1px white; */
   border-radius: 1px;
   height: 62px;
-  width: 24%;
+  width: 100%;
   position: relative;
   bottom: 5px;
 }
@@ -75,10 +71,6 @@ nav{
   text-align: right;
   flex:1;
   display: flex;
-}
-nav li{
-  display: inline;
-  margin-right: 15px;
 }
 .dropdown {
   position: relative;
@@ -120,7 +112,18 @@ nav li{
 }
 .title h1 h4{
   padding-bottom: 30px;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+  font-family: 'Montserrat-Black';
+  font-size: 25px
+}
+h1 {
+  font-size: 40px;
+  padding-top: none;
+}
+h4 {
+  font-size: 25px
+}
+p{
+  font-size: 18px
 }
 
 .blur{
@@ -150,13 +153,17 @@ nav li{
   color:white;
   cursor: pointer;
   margin-bottom: 150px;
+  font-family: 'Raleway'
 }
 
 .title button:hover {
   background:rgba(0, 0, 0, 0.5);
 }
+.title button:focus{
+  outline:none
+}
 footer {
-  background: darkgreen;
+  background: #11dc27;
   height: 30px;
   padding:auto;
   display: flex;
@@ -198,7 +205,7 @@ footer {
   border-radius: 10px;
   margin-right: 20px;
   margin-left: 20px;
-  box-shadow: -9px 9px 11px rgba(0,0,0,0.2);
+  box-shadow: -9px 9px 40px rgba(0,0,0,0.2);
 }
 .extras:hover{
   box-shadow: -9px 9px 40px rgba(0,0,0,0.6);
@@ -210,6 +217,8 @@ footer {
 .anselem h3{
   text-transform: uppercase;
   text-align: center;
+  font-family: 'Raleway'
+
 }
 .main{
   width: 85%;
@@ -231,14 +240,16 @@ footer {
   display: block;
   color: black;
   position: relative; 
-  z-index: 10;}
+  z-index: 10;
+  /* font-family: 'Raleway' */
+}
   
   
   .startlinkContainer {
   border-radius: 5px;
   width: 180px;
   position: relative;
-  border-bottom: 1px solid #11dc27;
+  border: 1px solid #11dc27;
   text-align: center;}
   
   .startlinkContainer::before {
@@ -262,19 +273,22 @@ footer {
 
   .extras ul li {
     padding: 10px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Raleway';
     font-weight: bold;
 
   }
 
-  .extras h3{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+  h3{
+    font-family: 'Releway'
   }
 .coverUp {
-  background-color: greenyellow;
+  background-color: #11dc27;
   width: 50%;
   margin: 0 auto;
   box-shadow: 0 0 25px 0 black;
+  /* border: 1px solid white; */
+  border-radius: 5px;
+
 }
 .icon{
   display: none;
@@ -300,7 +314,7 @@ footer {
     position: relative;
     display: block;
     top: 143px;
-    background: #72dd2e;
+    background: #11dc27;
   }
   .main-nav.responsive div.icon {
     position: absolute;

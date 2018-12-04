@@ -52,7 +52,6 @@ class UserController {
 
     users.push(user);
 
-    // console.log(user)
     res.status(201).send(response);
   }
 

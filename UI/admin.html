@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="A web app designed for reporting corruption and need for intervention">
+        <meta name="author" content="Odimegwu Anselem">
+    <title>Login Page</title>
+    <link rel="stylesheet" , href="./css/Admin.css" />
+  </head>
+  <body >
+
+        <header>
+            <div class="siteLogo">
+                <h2><i>i</i>Reporter</h2>
+            </div>
+            <nav>
+                
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">View Reports</a></li>
+                    <li><a href="signup.html">SignUp</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class='container clearfix'>
+            <div class="sidebar">
+                <button class="tablinks" onclick="opentab(event, 'View')" id="defaultOpen">View All Reports</button>
+                <button class="tablinks" onclick="opentab(event, 'Draft')">Draft</button>
+                <button class="tablinks" onclick="opentab(event, 'Under')">Under Investigation</button>
+                <button class="tablinks" onclick="opentab(event, 'Resolved')">Resolved</button>
+                <button class="tablinks" onclick="opentab(event, 'Rejected')">Rejected</button>
+
+            </div>
+            <div class= "clearfix">
+                  <div id="View" class="tabcontent">
+                    <h3>London</h3>
+                    <p>London is the capital city of England.</p>
+                  </div>
+                  
+                  <div id="Draft" class="tabcontent">
+                    <h3>Draft</h3>
+                    <p>Paris is the capital of France.</p> 
+                    <div class='card'>
+                    
+                    </div>
+                    <div class='card'>
+                    
+                        </div>
+                        <div class='card'>
+                    
+                            </div>
+                            <div class='card'>
+                    
+                                </div>
+                                <div class='card'>
+                    
+                                    </div>
+                                    <div class='card'>
+                        
+                                        </div>
+                                </div>
+                                </div>
+                                
+                            
+                  </div>
+                  
+                  <div id="Under" class="tabcontent">
+                    <h3>Tokyo</h3>
+                    <p>Tokyo is the capital of Japan.</p>
+                  </div>
+                  <div id="Resolved" class="tabcontent">
+                        <h3>Tokyo</h3>
+                        <p>Tokyo is the capital of Japan.</p>
+                      </div>
+                <div id="Rejected" class="tabcontent">
+                            <h3>Tokyo</h3>
+                            <p>Tokyo is the capital of Japan.</p>
+                        </div>
+            </div>
+            
+
+      
+    <footer><p id="footNote">Copyright &copy; 2018- 2020 iReporter</p></footer>
+    <script src = "./js/admin.js"></script>
+  </body>
+</html>

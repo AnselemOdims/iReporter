@@ -77,6 +77,10 @@ body{
     margin-right: 5px;
     margin-left: 20px;
   }
+  #loginBody {
+    min-height: 90vh;
+    padding-bottom: 40px;
+  }
   #loginHeader {
     color: #11dc27;
     text-align: center;
@@ -97,7 +101,7 @@ body{
   #loginForm {
     margin: 0 auto;
     padding: 10px 25px 10px;
-    width: 75%;
+    width: 50%;
     box-shadow: 6px 6px 3px lightgray;
     text-align: center;
     border: solid 1px #c1c1c1;
@@ -177,11 +181,14 @@ body{
   footer {
     background: darkgreen;
     height: 30px;
-    padding:auto;
+    padding: auto;
     display: flex;
     align-items: center;
     margin-top: 60px;
     margin-bottom: 0;
+    /* position: absolute; */
+    bottom: 0;
+    width: 100%;
   }
   #footNote {
     margin: 0 auto;
