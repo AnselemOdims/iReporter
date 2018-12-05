@@ -8,29 +8,31 @@ export const redFlagReports = [];
               
 
 class RedflagController {
-
+     //Create a new red-flag constructor
     createRedFlag(req, res) {
-        
         let userId = req.decoded.id
         let reportId = redFlagReports.length + 1;
   const reports = {
-        id : reportId,
-        createdOn : moment(new Date()),
-        createdBy : userId, // represents the user who created this record
-        type : req.body.type, 
-        location: req.body.location,
-        status : "draft", // [draft, under investigation, resolved, rejected]
-        comment: req.body.comment
-    
+    id : reportId,//red-flag primary key
+    createdOn : moment(new Date()),//returns current date
+    createdBy : userId, // represents the user who created this record
+    type : req.body.type, 
+    location: req.body.location,
+    status : "draft",//status of report, it can be draft, under investigation, resolved, rejected
+    images: [],
+    videos: [],
+    title: req.body.title, 
+    comment: req.body.comment
     }
-    // const token = auth.authenticate(user)
+   
     const response = {
             "status" : 201,
             "data" : [{
                 "id" : reportId , // red flag record primary key
-                "message" : "Created new red-flag record"
+                "message" : "Created new red-flag record"//Success message
                     }
-            ]
+            ], 
+            redFlagReports
             
         };
        redFlagReports.push(reports)
@@ -38,7 +40,7 @@ class RedflagController {
         res.status(201).json(response)
     }
 
-
+   //constructor for get all red-flag records
     getAllRedFlags(req, res){
         let userId = req.decoded.id
         if(!userId){  
@@ -49,6 +51,7 @@ class RedflagController {
         
     }
 
+    //constructor for get single red-flag record
     getSingleRedFlag(req, res){
 
         const redFlagReport = redFlagReports.find(report => report.id === parseInt(req.params.id))
@@ -61,6 +64,7 @@ class RedflagController {
         res.status(200).send({ status: 200, data: [{redFlagReport}]})
     }
 
+    //constructor to edit red-flags by users
     editRedFlag(req, res){
     
         const redFlagReport = redFlagReports.find(report => report.id === parseInt(req.params.id));
@@ -74,6 +78,7 @@ class RedflagController {
         res.status(200).send({ status: 200, data: [{ id: reportId, message:'Updated red-flag record’s comment', redFlagReport}]})
     }
 
+    //constructor to delete red-flag
     deleteRedFlag(req, res){
         const redFlagReport = redFlagReports.find(report => report.id === parseInt(req.params.id));
         if(!redFlagReport){
@@ -87,6 +92,7 @@ class RedflagController {
         res.status(200).send({ status: 200, data: [{ id: reportId, message:'red-flag record has been deleted', redFlagReports}]})
     }
 
+    //change the location of the report
     changeLocation(req, res){
         const redFlagReport = redFlagReports.find(report => report.id === parseInt(req.params.id));
         if(!redFlagReport){
