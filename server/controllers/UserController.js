@@ -59,7 +59,7 @@ class UserController {
   loginUser(req, res) {
     let user = users.find(use => use.email === req.body.email);
     if (!user) {
-      res.json({ status: 400, error: "Invalid Email or Password" });
+      res.json({ status: 400, error: "Invalid Email or Password Combination" });
       return;
   }
    let userpw = user.password;
@@ -67,7 +67,7 @@ class UserController {
 
     const pwcheck = bcrypt.compareSync(req.body.password, userpw);
     if (!pwcheck) {
-      res.json({ status: 400, error: "Invalid Email or Password" });
+      res.json({ status: 400, error: "Invalid Email or Password Combination" });
       return;
     }
      else {

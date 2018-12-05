@@ -3,9 +3,9 @@ export default (req, res, next) => {
     
     let check = true;
    
-    const emailFilter = /^([a-zA-Z0-9_\s.-])+@(([a-zA-Z0-9-])+.)+([a-zA-Z0-9]{2,4})+$/;
-   
-  
+    //https://stackoverflow.com/questions/8262635/validating-an-inputted-email-and-password-in-javascript
+    const emailFilter = /^([a-zA-Z0-9_\s.-])+@(([a-zA-Z0-9-])+.)+([a-zA-Z]{2,5})+$/;
+     
     if (req.body.email) req.body.email = req.body.email.trim();
   
     const values = req.body;

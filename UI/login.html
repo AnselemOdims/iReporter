@@ -19,7 +19,7 @@
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="#">View Reports</a></li>
-                    <li><a href="signup.html">SignUp</a></li>
+                    <li><a href="signup.html">Signup</a></li>
                 </ul>
             </nav>
         </header>
@@ -31,32 +31,33 @@
             <div id="loginForm">
                 <form>
                     <div class="loginGroup">
-                        <label class="labelId">Username</label>
+                        <label for="email", class="labelId">Email</label>
                         <input
-                                class="loginDetails"
+                                class="loginDetails", id="email"
                                 ,
-                                name="username"
+                                name="email"
                                 ,
-                                type="text"
+                                type="email"
                                 ,
                                 autocomplete="off"
                         />
                     </div>
 
                     <div class="loginGroup">
-                        <label class="labelId">Password</label>
+                        <label for= "password", class="labelId">Password</label>
                         <input
-                                class="loginDetails"
+                                class="loginDetails", id="password"
                                 ,
                                 name="password"
                                 ,
-                                type="text"
+                                type="password"
                                 ,
                                 autocomplete="off"
                         />
+                    <input class="pwhide", type="checkbox" onclick="myFunction()"><span>Show Password</span>
                     </div>
-
-                    <div><input id="loginButton" , type="submit" , value="Login" /></div>
+                    
+                    <div><button id="loginButton" , type="submit"><a href="#">Login</a></button></div>
 
                     <div id="signUpLink">
                         <h4>Don't have an account? <a href="signup.html"> Signup</a></h4>
@@ -64,7 +65,8 @@
                 </form>
             </div>
         </div>
-    <!-- </div> -->
+    
     <footer><p id="footNote">Copyright &copy; 2018- 2020 iReporter</p></footer>
+    <script src= './js/login.js'></script>
   </body>
 </html>

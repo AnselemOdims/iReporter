@@ -16,7 +16,10 @@ class InterventionController {
             createdBy : userId, // represents the user who created this record
             type : req.body.type, 
             location: req.body.location,
-            status : "draft", // [draft, under investigation, resolved, rejected]
+            status : "draft",
+            images: [],
+            videos: [],
+            title: req.body.title, 
             comment: req.body.comment
     
     }
@@ -27,7 +30,8 @@ class InterventionController {
                 "id" : reportId , //  record primary key
                 "message" : "Created new intervention record"
                     }
-            ]
+            ],
+            interventionReports
             
         };
        interventionReports.push(reports)
