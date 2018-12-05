@@ -72,8 +72,7 @@ class InterventionController {
         interventionReport.comment = req.body.comment;
 
         res.status(200).send({ status: 200, data: [{ id: reportId, message:'Updated intervention record’s comment', interventionReport}]})
-        
-    }
+        }
 
     deleteIntervention(req, res){
         const interventionReport = interventionReports.find(report => report.id === parseInt(req.params.id));
