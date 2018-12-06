@@ -11,7 +11,7 @@
   <body id="pageBody">
     <header>
         <div class="siteLogo">
-            <h2>iReporter</h2>
+            <h2><em>i</em>Reporter</h2>
           </div>
       <nav>
         <ul>
@@ -29,8 +29,8 @@
 
            <div class="reportButtonClass">
         
-          <button class="reportButton1" onclick=" myFunction(event, 'Red-Flag');" id="defaultOpen">Red-Flag</button>
-          <button class="reportButton2" onclick="myFunction(event, 'Intervention')">Intervention</button>
+          <button class="reportButton1" onclick=" myFunction(event, 'Red-Flag');" id="defaultOpen"><span class="name">Red-Flag</span></button>
+          <button class="reportButton2" onclick="myFunction(event, 'Intervention')"><span class="name">Intervention</span></button>
         </div>
               
       <div id="Red-Flag" class= "reportForm">
@@ -52,8 +52,8 @@
             </div>
              <br><br>
        <div>
-          <label for="avatar" class="labelId">Include Media Evidence:</label>
-          <input type="file" name="avatar" accept="image/*, video/*" multiple />
+          <label for="avatar" class="fileUpload">Include Media Evidence</label>
+          <input type="file" id="avatar" name="avatar" accept="image/*, video/*" multiple />
         </div>   
           <div>
             <input id="submitReportButton" , type="submit" , value="Submit Report" />
@@ -80,8 +80,8 @@
           </div>
                <br><br>
             <div>
-            <label for="avatar" class="labelId">Include Media Evidence:</label>
-            <input type="file" name="avatar" accept="image/*, video/*" multiple />
+            <label for="avatar" class="fileUpload">Include Media Evidence</label>
+            <input type="file" id= "avatar" name="avatar" accept="image/*, video/*" multiple />
           </div>
             <div>
               <input id="submitReportButton" , type="submit" , value="Submit Report" />
@@ -90,7 +90,30 @@
         </div>
     </div>
 
-    <script src = "./js/create-reports.js" ></script>
+    <footer><p id="footNote">Copyright &copy; 2018- 2020 iReporter</p></footer>
+
+    <script >
+    var options = {
+  enableHighAccuracy: true,
+  timeout: 5000,
+  maximumAge: 0
+};
+
+function success(pos) {
+  var crd = pos.coords;
+
+  console.log('Your current position is:');
+  console.log(`Latitude : ${crd.latitude}`);
+  console.log(`Longitude: ${crd.longitude}`);
+  console.log(`More or less ${crd.accuracy} meters.`);
+}
+
+function error(err) {
+  console.warn(`ERROR(${err.code}): ${err.message}`);
+}
+
+navigator.geolocation.getCurrentPosition(success, error, options);
+    </script>
        
   </body>
 </html>

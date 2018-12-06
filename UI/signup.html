@@ -16,7 +16,7 @@
       <nav>
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="#">View Reports</a></li>
+          <li><a href="view-reports.html">View Reports</a></li>
           <li><a href="login.html">Login</a></li>
         </ul>
       </nav>
@@ -38,12 +38,49 @@
           <div class="form_main">
             <div class="form_inputs">
               <div class="formGroup">
-                <label class="labelId" for="fullname">Full Name</label>
-                <input class="formDetails" name="fullname" id="fullname" type="text" autocomplete="off" required/>
+                <label class="labelId" for="firstname">First Name</label>
+                <input class="formDetails" name="firstname" id="firstname" type="text" autocomplete="off" required/>
+              </div>
+              <div class="formGroup">
+                  <label class="labelId" for="othernames">Other Names</label>
+                  <input class="formDetails" name="othernames" id="othernames" type="text" autocomplete="off" required/>
+                </div>
+              <div class="formGroup">
+                <label class="labelId" for="email">Email</label>
+                <input
+                        class="formDetails" id="email"
+                        name="email"
+                        ,
+                        type="text"
+                        ,
+                        autocomplete="off"
+                        required
+                />
               </div>
 
               <div class="formGroup">
-                <label class="labelId" for="username">Username</label>
+                <label class="labelId" for="password">Password</label>
+                <input
+                        class="formDetails", id="password"
+                        name="password"
+                        ,
+                        type="password"
+                        ,
+                        autocomplete="off"
+                        required
+                />
+                <input class="pwhide", type="checkbox" onclick="myFunction()"><span>Show Password</span>
+              </div>
+            </div>
+            <div class="form_inputs">
+                <div class="formGroup">
+                    <label class="labelId" for="lastname">Last Name</label>
+                    <input class="formDetails" name="lastname" id="lastname" type="text" autocomplete="off" required/>
+                  </div>
+              <div class="formGroup">
+                <label for="username" class="labelId"
+                >Username</label
+                >
                 <input
                         class="formDetails" id="username"
                         name="username"
@@ -54,64 +91,35 @@
                         required
                 />
               </div>
-
               <div class="formGroup">
-                <label class="labelId" for="email">Email</label>
+                <label class="labelId" for="phone">Phone No.</label>
                 <input
-                        class="formDetails" id="email"
-                        name="email"
+                        class="formDetails" id="phone"
+                        name="phone"
                         ,
-                        type="email"
+                        type="phone"
                         ,
                         autocomplete="off"
                         required
                 />
               </div>
-            </div>
-            <div class="form_inputs">
-              <div class="formGroup">
-                <label for="password" class="labelId"
-                >Password</label
-                >
-                <input
-                        class="formDetails" id="password"
-                        name="password"
-                        ,
-                        type="text"
-                        ,
-                        autocomplete="off"
-                        required
-                />
-              </div>
-
               <div class="formGroup">
                 <label class="labelId" for="confirm-password">Confirm Password</label>
                 <input
-                        class="formDetails" id="phone"
+                        class="formDetails" id="password1"
                         name="confirm-password"
                         ,
-                        type="text"
+                        type="password"
                         ,
                         autocomplete="off"
                         required
                 />
               </div>
-              <div class="formGroup">
-                  <label class="labelId" for="phone">Phone No.</label>
-                  <input
-                          class="formDetails" id="phone"
-                          name="phone"
-                          ,
-                          type="phone"
-                          ,
-                          autocomplete="off"
-                          required
-                  />
-                </div>
+             
             </div>
           </div>
           <div>
-            <input id="signUpButton" , type="submit" , value="Sign Up" />
+            <button id="signUpButton" , type="submit"><a href="#">Signup</a></button>
           </div>
           <div id="loginLink">
             <h4>Already have an account? <a href="login.html">Login</a></h4>
@@ -120,5 +128,6 @@
       </div>
     </div>
     <footer><p id="footNote">Copyright &copy; 2018- 2020 iReporter</p></footer>
+    <script src= './js/signup.js'></script>
   </body>
 </html>

@@ -6,7 +6,7 @@ const auth = {
       return jwt.sign({
         id: user.id,
         email: user.email,
-        isAdmin: this.isAdmin
+        
       }, process.env.SECRET, {
         expiresIn: '48h',
       });
