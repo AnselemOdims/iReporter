@@ -101,7 +101,8 @@ class RedflagController {
             }
             let reportId = redFlagReport.id;
             redFlagReport.location = req.body.location;
-            res.status(200).send({ status: 200, data: [{ id: reportId, message:'Updated red-flag record’s location', redFlagReport}]})
+            let location = redFlagReport.location
+            res.status(200).send({ status: 200, data: [{ id: reportId, message:'Updated red-flag record’s location', location}]})
     }
 
 
