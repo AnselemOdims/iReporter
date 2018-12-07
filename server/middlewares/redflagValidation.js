@@ -26,7 +26,7 @@ export default (req, res, next) => {
      if(values.title && !values.title.replace(/\s/g, '').length) {
         errors.title = 'Title can not be blank'; check = false;
      }
-     if(values.title.length < 4) {
+     if(values.title && (values.title).length < 4) {
         errors.title = 'Title should be less than four words'; check = false;
      }
      if(values.comment && !values.comment.replace(/\s/g, '').length) {

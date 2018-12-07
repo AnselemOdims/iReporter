@@ -51,7 +51,7 @@ class InterventionController {
 
     getSingleIntervention(req, res){
 
-        const interventionReport = interventionReports.find(report => report.id === parseInt(req.params.id))
+        const interventionReport = interventionReports.find(report => report.id === Number(req.params.id))
 
         if(!interventionReport){
             res.status(404).json({ status: 404, error: "Not found" }) 
@@ -63,7 +63,7 @@ class InterventionController {
 
     editIntervention(req, res){
     
-        const interventionReport = interventionReports.find(report => report.id === parseInt(req.params.id));
+        const interventionReport = interventionReports.find(report => report.id === Number(req.params.id));
         if(!interventionReport){
             res.status(404).json({ status: 404, error: "Not found" }) 
             return;
@@ -75,7 +75,7 @@ class InterventionController {
         }
 
     deleteIntervention(req, res){
-        const interventionReport = interventionReports.find(report => report.id === parseInt(req.params.id));
+        const interventionReport = interventionReports.find(report => report.id === Number(req.params.id));
         if(!interventionReport){
             res.status(404).json({ status: 404, error: "Not found" })
             return; 
@@ -87,7 +87,7 @@ class InterventionController {
         res.status(200).send({ status: 200, data: [{ id: reportId, message:'intervention record has been deleted', interventionReports}]})
     }
     changeLocation(req, res){
-        const interventionReport = interventionReports.find(report => report.id === parseInt(req.params.id));
+        const interventionReport = interventionReports.find(report => report.id === Number(req.params.id));
         if(!interventionReport){
             res.status(404).json({ status: 404, error: "Not found" })
             return; 

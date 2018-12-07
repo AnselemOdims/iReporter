@@ -17,7 +17,7 @@
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="view-reports.html">View Reports</a></li>
-          <li><a href="dashboard.html">Profile</a></li>
+          <li><a href="profile.html">Profile</a></li>
           <li><a href="index.html">Logout</a></li>
 
           
@@ -92,27 +92,8 @@
 
     <footer><p id="footNote">Copyright &copy; 2018- 2020 iReporter</p></footer>
 
-    <script >
-    var options = {
-  enableHighAccuracy: true,
-  timeout: 5000,
-  maximumAge: 0
-};
+    <script src= "js/create-reports.js">
 
-function success(pos) {
-  var crd = pos.coords;
-
-  console.log('Your current position is:');
-  console.log(`Latitude : ${crd.latitude}`);
-  console.log(`Longitude: ${crd.longitude}`);
-  console.log(`More or less ${crd.accuracy} meters.`);
-}
-
-function error(err) {
-  console.warn(`ERROR(${err.code}): ${err.message}`);
-}
-
-navigator.geolocation.getCurrentPosition(success, error, options);
     </script>
        
   </body>

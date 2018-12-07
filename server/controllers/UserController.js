@@ -82,13 +82,13 @@ class UserController {
     }
 
     getUser(req, res){
-      let user = users.find(use => use.id === parseInt(req.params.id));
+      let user = users.find(use => use.id === Number(req.params.id));
     if (!user) {
       res.json({ status: 400, error: "Something went wrong, try later" });
       return;
   }
-     let report = redFlagReports.find(use => use.createdBy === parseInt(req.params.id) );
-     let reports= interventionReports.find(used => used.createdBy === parseInt(req.params.id))
+     let report = redFlagReports.find(use => use.createdBy === Number(req.params.id) );
+     let reports= interventionReports.find(used => used.createdBy === Number(req.params.id))
      delete user.password
      delete user.confirmpassword
 
