@@ -5,7 +5,6 @@ body{
     margin: auto;
     font-family: 'Raleway'
   }
-  
   header {
     background-color: #11dc27;
     position: fixed;
@@ -20,14 +19,16 @@ body{
   header ul {
     list-style: none;
     text-align: right;
-    padding-right: 20px;
+    /* padding-left: 700px; */
+    padding-right: 20px
   }
   header h2{
     color: #11dc27;
     text-shadow: 1px 1px grey,-1px 1px grey,1px -1px grey,-1px -1px grey;
     font-size: 30px;
     margin-top: 7px;
-    margin-left: 10px;
+    /* font-family: MosaicCaps; */
+    padding: 8px 4px 10px 25px;
   }
   header li {
     display: inline-block;
@@ -39,7 +40,6 @@ body{
     /* font-weight:bold; */
     text-transform: capitalize;
     text-shadow: 1px 1px grey,-1px 1px grey,1px -1px grey,-1px -1px grey;
-    
   }
   header li:hover {
     color: whitesmoke;
@@ -49,6 +49,7 @@ body{
   header a {
     text-decoration: none;
     color: white;
+    padding: none;
   }
   header a:hover {
     color: antiquewhite;;
@@ -59,10 +60,9 @@ body{
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    /* border: solid 1px white; */
     border-radius: 1px;
     height: 70px;
-    width: 11%;
+    width: 160px;
     position: relative;
     bottom: 5px;
   }
@@ -80,31 +80,34 @@ body{
     margin-right: 5px;
     margin-left: 20px;
   }
-  #loginBody {
-    min-height: 90vh;
-    padding-bottom: 40px;
-  }
-  #loginHeader {
+  
+  #signUpHeader {
     color: #11dc27;
     text-align: center;
     font-family: 'Raleway';
     text-transform: uppercase;
     text-shadow: 1px 1px 1px grey;
-    font-size: 45px;
+    font-size: 40px;
     width: 100%;
-    padding-top: 50px;
-  
   }
-  input.loginDetails{
+  #signUpHeader p{
+    margin-bottom: 30px;
+    padding-top: 50px
+  }
+  #signUpHeaderDesc {
+    font-size: 18px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  input.formDetails{
     font-family: 'Raleway';
     font-size: 17px;
     color: black;
   }
-  
-  #loginForm {
+  #signUpForm {
     margin: 0 auto;
-    padding: 10px 25px 10px;
-    width: 45%;
+    padding: 10px 25px 25px;
+    width: 75%;
     box-shadow: 6px 6px 3px lightgray;
     text-align: center;
     border: solid 1px #c1c1c1;
@@ -112,135 +115,123 @@ body{
     background: rgba(255, 255, 255, 0.85);
     /*     background-color: #ccc;; */
     margin-top: 0;
-    padding-top: 30px;
   }
   
   .labelId {
     color: black;
     text-align: left;
     font-family: 'Raleway';
-    /* text-shadow: 1px 1px 1px black; */
+    /*text-shadow: 1px 1px 1px black;*/
     font-size: 25px;
-    width: 53%;
+    width: 85%;
     padding: 0px;
     display: block;
     margin: 0 auto;
     margin-bottom: 10px;
     margin-top: 30px;
-    font-weight: bold
+    font-weight: bold;
   }
-  .loginDetails {
-    width: 50%;
-    height: 20px;
+  
+  .formGroup label:after {
+    content: "*";
+    display: inline;
+    font-size: 18px;
+    color: red;
+  }
+  .formDetails:focus{
+    outline:none
+  }
+  .formDetails {
+    width: 80%;
+    height: 17px;
     border: 2px solid #a1a1a1;
     border-radius: 8px;
     padding: 10px;
     display: block;
     margin: 0 auto;
-    margin-bottom: 40px;
-      background-color: #f7f7f7;
+    margin-bottom: 20px;
+    background-color: #f7f7f7;
+    
   }
-  
-  
-  .loginDetails:focus {
-   outline: none;
-  }
+ 
   .pwhide {
+    /* margin: 0 auto; */
     float: left;
-    margin-left: 130px
+    margin-left: 27px
   }
   span {
-    /* float: left; */
+    float: left;
     padding-left: 5px;
     font-family: 'Raleway';
-    margin-right: 300px
-
   }
   
-  #loginButton {
-    margin-top: 25px;
-    box-shadow: 2px 2px 3px lightgrey;
-    width: 42%;
-    cursor: pointer;
-    height: 57px;
-    border-radius: 50px;
-    background-color: #11dc27;
-    font-family: 'Raleway';
-    font-size: 20px;
-    text-transform: uppercase;
-    color: #fff;
- 
+  #signUpBody{
+    margin: auto;
+    width:90%;
   }
-  #loginButton a {
+  
+  #signUpButton {
+    margin-top: 10px;
+      box-shadow: 2px 2px 3px lightgrey;
+      width: 20%;
+      cursor: pointer;
+      height: 45px;
+      border-radius: 10px;
+      border: 1px #11dc27 solid;
+      background-color: white;
+      font-family: 'Raleway';
+      font-size: 22px;
+      text-transform: uppercase;
+      /* font-weight: bold; */
+      color: black;
+      
+  }
+  #signUpButton a {
     text-decoration: none;
-    color: white
+    color: black
   }
-  #loginButton:hover {
-    background-color: darkgreen;
+  #signUpButton:hover {
+    background-color: #11dc27;
     color: white;
     box-shadow: 0 0 0 #d2d2d2;
   }
-  #signUpLink{
-    padding-top: 20px;
+  #signUpButton:focus {
+    outline: none;
   }
-  #signUpLink h4 {
+  /*  */
+  .form_main{
+    display: flex;
+    width: 87%;
+    margin: 0 auto;
+  }
+  .form_inputs{
+    flex:1;
+  }
+  #loginLink h4 {
     font-family: 'Raleway';
   }
-  #signUpLink a {
+  #loginLink a {
     text-decoration: none;
     color: #a9a9a9;
   }
-  #signUpLink a:hover {
+  #loginLink a:hover {
     text-decoration: none;
     color: dimgray;
   }
-  
   footer {
     background: #11dc27;
     height: 30px;
-    padding: auto;
+    padding:auto;
     display: flex;
     align-items: center;
     margin-top: 60px;
     margin-bottom: 0;
-    bottom: 0;
-    width: 100%;
   }
   #footNote {
     margin: 0 auto;
     text-align: center;
     color: #fff;
+    font-family: 'Raleway'
   }
-
-  @media screen and (max-width: 600px){
-    .main-nav{
-      display: none
-    }
-
-    .siteLogo{
-      width: 32%
-    }
-    #loginHeader {
-      font-size: 35px
-    }
-    .labelId{
-      font-size: 18px
-    }
-    .loginDetails{
-      height: 10px;
-      margin-bottom: 16px
-    }
-    .pwhide{
-      margin-left: 29px
-    }
-    span{
-      padding-left: 0;
-      margin-right: 0
-    }
-    #loginButton{
-      font-size: 18px;
-      width: 60%
-    }
-
-  }
+  
   

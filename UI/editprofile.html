@@ -5,26 +5,27 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="description" content="A web app designed for reporting corruption and need for intervention">
       <meta name="author" content="Odimegwu Anselem">
-    <title>Signup Page</title>
-    <link rel="stylesheet" , href="./css/signup.css" />
+    <title>iReporter | Edit Profile</title>
+    <link rel="stylesheet" , href="./css/editprofile.css" />
   </head>
   <body>
     <header>
       <div class="siteLogo">
         <h2><i>i</i>Reporter</h2>
       </div>
-      <nav class= "main-nav">
+      <nav>
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="view-reports.html">View Reports</a></li>
-          <li><a href="login.html">Login</a></li>
+          <li><a href="create-reports.html">Create Reports</a></li>
+          <li><a href="index.html">Logout</a></li>
         </ul>
       </nav>
     </header>
     <div id="signUpBody">
       <div id="signUpHeader">
         <p>
-          <b>Sign Up</b>
+          <b>Edit Profile</b>
         </p>
       </div>
 
@@ -32,7 +33,7 @@
         <form>
           <div id="signUpHeaderDesc">
             <p>
-              <em>Please input the following details here to sign up to this page</em>
+              <em>Please input the following details to edit your profile</em>
             </p>
           </div>
           <div class="form_main">
@@ -45,32 +46,19 @@
                   <label class="labelId" for="othernames">Other Names</label>
                   <input class="formDetails" name="othernames" id="othernames" type="text" autocomplete="off" required/>
                 </div>
-              <div class="formGroup">
-                <label class="labelId" for="email">Email</label>
-                <input
-                        class="formDetails" id="email"
-                        name="email"
-                        ,
-                        type="text"
-                        ,
-                        autocomplete="off"
-                        required
-                />
-              </div>
-
-              <div class="formGroup">
-                <label class="labelId" for="password">Password</label>
-                <input
-                        class="formDetails", id="password"
-                        name="password"
-                        ,
-                        type="password"
-                        ,
-                        autocomplete="off"
-                        required
-                />
-                <input class="pwhide", type="checkbox" onclick="myFunction()"><span>Show Password</span>
-              </div>
+                <div class="formGroup">
+                    <label class="labelId" for="phone">Phone No.</label>
+                    <input
+                            class="formDetails" id="phone"
+                            name="phone"
+                            ,
+                            type="phone"
+                            ,
+                            autocomplete="off"
+                            required
+                    />
+                  </div>
+              
             </div>
             <div class="form_inputs">
                 <div class="formGroup">
@@ -91,43 +79,20 @@
                         required
                 />
               </div>
-              <div class="formGroup">
-                <label class="labelId" for="phone">Phone No.</label>
-                <input
-                        class="formDetails" id="phone"
-                        name="phone"
-                        ,
-                        type="phone"
-                        ,
-                        autocomplete="off"
-                        required
-                />
-              </div>
-              <div class="formGroup">
-                <label class="labelId" for="confirm-password">Confirm Password</label>
-                <input
-                        class="formDetails" id="password1"
-                        name="confirm-password"
-                        ,
-                        type="password"
-                        ,
-                        autocomplete="off"
-                        required
-                />
-              </div>
+                         
              
             </div>
           </div>
           <div>
-            <button id="signUpButton"><a href="profile.html">Signup</a></button>
+            <button id="signUpButton" , type="submit"><a href="profile.html">return</a></button>
+            <button id="signUpButton" , type="submit"><a href="profile.html">edit</a></button>
+
           </div>
-          <div id="loginLink">
-            <h4>Already have an account? <a href="login.html">Login</a></h4>
-          </div>
+          
         </form>
       </div>
     </div>
     <footer><p id="footNote">Copyright &copy; 2018- 2020 iReporter</p></footer>
-    <script src= './js/signup.js'></script>
+    
   </body>
 </html>

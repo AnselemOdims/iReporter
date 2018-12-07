@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>View Reports</title>
-    <link rel="stylesheet" , href="./css/view-reports.css" />
+    <title>iReporter | View Reports</title>
+    <link rel="stylesheet" , href="./css/dashboard.css" />
   </head>
   <body id="pageBody">
     <header>
@@ -12,62 +12,175 @@
       <nav>
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="view-reports.html">SignUp</a></li>
-          <li><a href="signin.html">Login</a></li>
+          <li><a href="signup.html">Signup</a></li>
+          <li><a href="login.html">Login</a></li>
         </ul>
       </nav>
     </header>
-    <h3 id="dashboardHeader">
-      These are the corruption reports posted by users
-    </h3>
-    <div id="postedReport">
-      <p><b>Report Title:</b></p>
-      <p>
-        <b>Report Description:</b> this is where the report decription coming
-        from the create report page goes to...
-      </p>
-      <br /><br />
-      <p>
-        <b>Report Status:</b> this explains whether the report record is under
-        investigation, rejected(in the event of a false claim), or resolved
-      </p>
-      <div>
-        <small>
-        <em>Posted on date</em>
-        </small>
+   
+    <div class="reportgroupContainer">
+      <div class="groupHeader1">
+          <h3>report records</h3>
       </div>
-      <div>
-        <!--
-          can only edit or delete report record if it is yet to be marked as either under investigation, rejected or resolved
-          <button id="">EDIT REPORT</button>
-          <button id="">DELETE REPORT</button>
-        -->
-      </div>
-    </div>
+          <div class="listGroup">
+                  <div class="reportGroup">
+                          <div class= "status3">
+                                  <small class="status-text">Intervention</small>
+                          </div>
+                          <div class="status1">
+                                  <small class="status-text">Draft</small>
+                              </div><br><br><br>
+                          <div class="reportGroupHead">
+                            <p><h3><b>Title:</b></h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit </p>
+                           
+                          </div>
+                          <p><h3>Description: </h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur 
+                              sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
+                               Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, 
+                               vel illum qui dolorem eum fugiat quo voluptas nulla pariatur<span class="ellipse">. . .</span></p>
+                              <small>Posted: 2 minutes ago</small><br>
+                            <small>Posted by: Joshua Matt</small>
 
-    <div id="postedReport">
-      <p><b>Report Title:</b></p>
-      <p>
-        <b>Report Description:</b> this is where the report decription coming
-        from the create report page goes to...
-      </p>
-      <br /><br />
-      <p>
-        <b>Report Status:</b> this explains whether the report record is under
-        investigation, rejected(in the event of a false claim), or resolved
-      </p>
-      <div>
-        <small>
-        <em>Posted on date</em>
-        </small>
-      </div>
-      <div>
-        <!--
-          can only edit or delete report record if it is yet to be marked as either under investigation, rejected or resolved
-          <button id="">EDIT REPORT</button>
-          <button id="">DELETE REPORT</button>
-        -->
-      </div>
-    </div>
+                              <br>
+                         
+      
+                         
+                         
+                         <div class="link">
+                          <small><a href="view-details.html">View Details</a></small>
+                         </div>
+                          </div>
+                  </div>
+                  <div class="reportGroup">
+                    <div class= "status2">
+                            <small class="status-text">Red-Flag</small>
+                    </div>
+                    <div class= 'status1'>
+                            <small class="status-text">Under Investigation</small>
+                        </div><br><br><br>
+                <div class="reportGroupHead">
+                        <p><h3><b>Title:</b></h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit </p>
+                 
+                </div>
+                <p><h3>Description: </h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur 
+                    sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
+                     Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, 
+                     vel illum qui dolorem eum fugiat quo voluptas nulla pariatur<span class="ellipse">. . .</span></p>
+                    <small>Posted: 3 days ago</small><br>
+                    <small>Posted by: Mark Wayne</small><br>
+
+                    <div class="link">
+                        <small><a href="view-details.html">View Details</a></small>
+                       </div>
+                    
+                    
+        </div>
+              <div class="reportGroup">
+                    <div class= "status3">
+                            <small class="status-text">Intervention</small>
+                    </div>
+                    <div class= 'status1'>
+                            <small class="status-text">Resolved</small>
+                        </div><br><br><br>
+                <div class="reportGroupHead">
+
+                        <p><h3><b>Title:</b></h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit </p>
+                 
+                </div>
+                <p><h3>Description: </h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur 
+                    sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
+                     Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, 
+                     vel illum qui dolorem eum fugiat quo voluptas nulla pariatur<span class="ellipse">. . .</span></p>
+                    <small>Posted: 5 days ago</small><br>
+                    <small>Posted by: Ada Ngozi</small>
+
+                    <br>
+                    <div class="link">
+                        <small><a href="view-details.html">View Details</a></small>
+                       </div>
+        </div>
+        <div class="reportGroup">
+            <div class= "status2">
+                    <small class="status-text">Red-Flag</small>
+            </div>
+                <div class="status1">
+                        <small class="status-text">Rejected</small>
+                     
+                    </div><br><br><br>
+                <div class="reportGroupHead">
+                        <p><h3><b>Title:</b></h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit </p>
+                 
+                </div>
+                <p><h3>Description: </h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur 
+                    sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
+                     Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, 
+                     vel illum qui dolorem eum fugiat quo voluptas nulla pariatur<span class="ellipse">. . .</span></p>
+                    <div>
+                    <small>Posted: 5 days ago</small><br>
+                    <small>Posted by: Ibrahim Mohammed</small>
+
+                </div>
+                    <br>
+                    <div class="link">
+                        <small><a href="view-details.html">View Details</a></small>
+                       </div>
+        </div>
+                       <div class="reportGroup">
+                        <div class= "status3">
+                                <small class="status-text">Intervention</small>
+                        </div>
+                            <div class="status1">
+                                    <small class="status-text">Rejected</small>
+                                 
+                                </div><br><br><br>
+                            <div class="reportGroupHead">
+                                    <p><h3><b>Title:</b></h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit </p>
+                             
+                            </div>
+                            <p><h3>Description: </h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur 
+                                sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
+                                 Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, 
+                                 vel illum qui dolorem eum fugiat quo voluptas nulla pariatur<span class="ellipse">. . .</span></p>
+                                <div>
+                                <small>Posted: 5 days ago</small><br>
+                            <small>Posted by: Belemo Isaiah</small>
+
+                            </div>
+                                <br>
+                                <div class="link">
+                                    <small><a href="view-details.html">View Details</a></small>
+                                   </div>
+        </div>
+        </div>
+        <div class= "linkup">
+          <div class="link1">
+              <small class="number"><<</small>
+             </div>
+             <div class="link1">
+              <small class="number">1</small>
+             </div>
+             <div class="link1">
+              <small class="number">2</small>
+             </div>
+             <div class="link1">
+              <small class="number">3</small>
+             </div>
+             <div class="link1">
+              <small class="number">4</small>
+             </div>
+             <div class="link1">
+              <small class="number">5</small>
+             </div>
+             <div class="link1">
+              <small class="number">6</small>
+             </div>
+             <div class="link1">
+              <small class="number">7</small>
+             </div>
+             <div class="link1">
+              <small class="number"><b>>></b></small>
+             </div>
+          </div>
+        <footer><p id="footNote">Copyright &copy; 2018- 2020 iReporter</p></footer>
   </body>
 </html>
