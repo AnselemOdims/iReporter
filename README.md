@@ -15,10 +15,10 @@ Application where user can create red flag(an incident linked to corruption) and
     
 ### Pivotal Tracker
 Project is currently being built with the Project Management Tool, Pivotal Tracker.
-You can find the template at [https://www.pivotaltracker.com/n/projects/2183415](https://www.pivotaltracker.com/n/projects/2183415)
+You can find the template at [https://www.pivotaltracker.com/n/projects/2226963](https://www.pivotaltracker.com/n/projects/2226963)
 
 ### API Deployment
-API is deployed at [https://my-diary-challenge.herokuapp.com](https://my-diary-challenge.herokuapp.com)
+API is deployed at [https://ireporter-website.herokuapp.com](https://ireporter-website.herokuapp.com)
 
 ## Technologies
 
