@@ -26,7 +26,7 @@ API is deployed at [https://my-diary-challenge.herokuapp.com](https://my-diary-c
 * [ExpressJs](https://expressjs.com/) - Web Application Framework
 * [npm](https://www.npm.com/) - Dependency Manager
 
-### Supporting Packages
+###  Supporting Packages
 
 #### Linter(s)
 
