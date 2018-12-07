@@ -1,6 +1,5 @@
 
 import bodyparser from 'body-parser'
-import cors from 'cors'
 import express from 'express'
 import dotenv from 'dotenv'
 import routes from './server/routes/routes'
@@ -8,10 +7,10 @@ import routes from './server/routes/routes'
 dotenv.config();
 const app = express();
 
-const jsonParser = express.json();
-app.use(jsonParser);
+// const jsonParser = express.json();
+// app.use(jsonParser);
 
-app.use(cors())
+
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended:false }));
 

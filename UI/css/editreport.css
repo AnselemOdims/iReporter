@@ -120,58 +120,7 @@ body{
   position: relative; 
 
   }
-  .reportButton1{
-    margin-top: 10px;
-    /* box-shadow: 2px 2px 3px lightgrey; */
-    width: 150px;
-    cursor: pointer;
-    height: 42px;
-    border-radius: 7px;
-    background-color: white;
-    border: 1px solid red;
-    font-family: 'Raleway';
-    font-size: 17px;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: black;
-    margin-bottom: 20px;
-    margin-left: 10px;
-    /* position: relative; */
-  }
-  .reportButton1:focus{
-    outline:none;
-    background-color: red;
-    color: white 
 
-  }
-  
-
-  .reportButton2{
-    margin-top: 10px;
-    /* box-shadow: 2px 2px 3px lightgrey; */
-    width: 150px;
-    cursor: pointer;
-    height: 42px;
-    border-radius: 7px;
-    background-color: white;
-    border: 1px solid #11dc27;
-    font-family: 'Raleway';
-    font-size: 17px;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: black;
-    margin-bottom: 20px;
-    /* position: relative; */
-    /* margin-left: 10px; */
-  }
-  .reportButton2:focus{
-    outline:none;
-    background-color: #11dc27;
-    color: white 
-  }
-  
-  
-  
   #reportHeaderDesc {
     font-size: 16px;
     margin: 0 auto;
@@ -181,14 +130,14 @@ body{
   .reportForm {
     margin: 0 auto;
     padding: 20px 25px 25px;
-    width: 75%;
+    width: 60%;
     box-shadow: 6px 6px 3px lightgray;
     text-align: center;
     border: solid 1px #c1c1c1;
     border-radius: 13px;
     background: rgba(255, 255, 255, 0.95);
     /*     background-color: #ccc;; */
-    margin-top: 0;
+    margin-top: 90px;
   }
 
   
@@ -206,15 +155,10 @@ body{
   }
   h3.redFlag {
       font-size: 30px;
-      color: red;
+      color: #11dc27;
       font-family: 'Raleway';
   }
 
-  h3.inter {
-    font-size: 30px;
-    color: #11dc27;
-    font-family: 'Raleway';
-}
   
   .labelId {
     color: black;
@@ -292,7 +236,7 @@ body{
 
   #location2 {
     margin-top: 10px;
-      width: 12%;
+      width: 28%;
       cursor: pointer;
       height: 35px;
       border-radius: 4px;
@@ -309,7 +253,7 @@ body{
   
   #submitReportButton {
     margin-top: 30px;
-      width: 30%;
+      width: 20%;
       cursor: pointer;
       height: 40px;
       border-radius: 50px;

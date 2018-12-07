@@ -1,3 +1,83 @@
+
+
+
+header {
+  background-color: #11dc27;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0 25px 0 black;
+}
+header ul {
+  list-style: none;
+  text-align: right;
+  /* padding-left: 700px; */
+  padding-right: 20px
+}
+header h2{
+  color: #11dc27;
+  text-shadow: 1px 1px grey,-1px 1px grey,1px -1px grey,-1px -1px grey;
+  font-size: 30px;
+  margin-top: 7px;
+  /* font-family: MosaicCaps; */
+  padding: 8px 4px 10px 25px;
+}
+header li {
+  display: inline-block;
+  height: 40px;
+  width: 142px;
+  text-align: center;
+  font-family: 'Raleway';
+  line-height: 48px;
+  /* font-weight:bold; */
+  text-transform: capitalize;
+  text-shadow: 1px 1px grey,-1px 1px grey,1px -1px grey,-1px -1px grey;
+}
+header li:hover {
+  color: whitesmoke;
+  cursor: pointer;
+}
+
+header a {
+  text-decoration: none;
+  color: white;
+  padding: none;
+}
+header a:hover {
+  color: antiquewhite;;
+}
+.siteLogo{
+  float: left;
+  background: url(../images/binoculars-eyes.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 1px;
+  height: 70px;
+  width: 160px;
+  position: relative;
+  bottom: 5px;
+}
+.h-nav{
+  margin-top: 0;
+  display:flex;
+}
+nav{
+  text-align: right;
+  flex:1;
+  display: block
+}
+nav li{
+  display: inline;
+  margin-right: 5px;
+  margin-left: 20px;
+}
+
+
 * {
   box-sizing: border-box;
 }
@@ -6,11 +86,13 @@
 .sidebar {
   float: left;
   border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #f1f1f1;
+  border-radius: 7px;
+  background-color: white;
   width: 15%;
   height: 300px;
   position: fixed;
+  margin-top: 172px;
+
 }
 
 /* Style the buttons that are used to open the tab content */
@@ -29,12 +111,12 @@
 
 /* Change background color of buttons on hover */
 .sidebar button:hover {
-  background-color: #ddd;
+  background-color: whitesmoke
 }
 
 /* Create an active/current "tab button" class */
 .sidebar button.active {
-  background-color: #ccc;
+  background-color: #11dc27;
 }
 
 /* Style the tab content */
@@ -59,9 +141,25 @@
 
 .card {
   width: 30%;
-  height: 400px;
+  height: 300px;
   /* border: solid 1px black; */
   border-radius: 5px;
   box-shadow: 0 0 1em rgba(0, 0, 0, 0.25);
   display: inline-block;
+}
+
+footer {
+  background: #11dc27;
+  height: 30px;
+  padding:auto;
+  display: flex;
+  align-items: center;
+  margin-top: 60px;
+  margin-bottom: 0;
+}
+#footNote {
+  margin: 0 auto;
+  text-align: center;
+  color: #fff;
+  font-family: 'Raleway'
 }

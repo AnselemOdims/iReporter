@@ -27,7 +27,7 @@ export default (req, res, next) => {
     errors.firstname = 'firstname can not be blank';
     check = false;
   }
-  if ((values.firstname).length < 2) {
+  if (values.firstname && (values.firstname).length < 2) {
     errors.firstname = 'Firstname length must be at least 2 characters long';
     check = false;
   }
@@ -35,7 +35,7 @@ export default (req, res, next) => {
     errors.lastname = 'lastname can not be blank';
     check = false;
   }
-  if ((values.lastname).length < 2) {
+  if (values.lastname && (values.lastname).length < 2) {
     errors.lastname = 'Lastname length must be at least 2 characters long';
     check = false;
   }

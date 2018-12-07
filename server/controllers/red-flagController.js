@@ -54,7 +54,7 @@ class RedflagController {
     //constructor for get single red-flag record
     getSingleRedFlag(req, res){
 
-        const redFlagReport = redFlagReports.find(report => report.id === parseInt(req.params.id))
+        const redFlagReport = redFlagReports.find(report => report.id === Number(req.params.id))
 
         if(!redFlagReport){
             res.status(404).json({ status: 404, error: "Not found" }) 
@@ -67,7 +67,7 @@ class RedflagController {
     //constructor to edit red-flags by users
     editRedFlag(req, res){
     
-        const redFlagReport = redFlagReports.find(report => report.id === parseInt(req.params.id));
+        const redFlagReport = redFlagReports.find(report => report.id === Number(req.params.id));
         if(!redFlagReport){
             res.status(404).json({ status: 404, error: "Not found" }) 
             return;
@@ -80,7 +80,7 @@ class RedflagController {
 
     //constructor to delete red-flag
     deleteRedFlag(req, res){
-        const redFlagReport = redFlagReports.find(report => report.id === parseInt(req.params.id));
+        const redFlagReport = redFlagReports.find(report => report.id === Number(req.params.id));
         if(!redFlagReport){
             res.status(404).json({ status: 404, error: "Not found" })
             return; 
@@ -94,7 +94,7 @@ class RedflagController {
 
     //change the location of the report
     changeLocation(req, res){
-        const redFlagReport = redFlagReports.find(report => report.id === parseInt(req.params.id));
+        const redFlagReport = redFlagReports.find(report => report.id === Number(req.params.id));
         if(!redFlagReport){
             res.status(404).json({ status: 404, error: "Not found" })
             return; 

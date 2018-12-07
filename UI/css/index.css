@@ -116,7 +116,7 @@ nav{
   font-size: 25px
 }
 h1 {
-  font-size: 40px;
+  font-size: 20px;
   padding-top: none;
 }
 h4 {
@@ -329,10 +329,10 @@ footer {
     padding: 2px;
   }
   .siteLogo{
-    width:42%;
+    width:100%;
   }
   .blur{
-    height:486px;
+    height:600px;
     width:101%;
   }
   .blur1{
@@ -341,6 +341,7 @@ footer {
   }
   .title button{
     height:110px;
+    width: 200px
   }
   .extras{
     margin-top:14px;
