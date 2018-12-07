@@ -5,7 +5,7 @@ import InterventionController from '../controllers/interventionController'
 import validateRegisterUser from '../middlewares/registerValidation'
 import validateRedFlagReport from '../middlewares/redflagValidation'
 import validateInterventionReport from '../middlewares/interventionValidation'
-
+import validateLocation from '../middlewares/locationValidation'
 import validateLoginUser from '../middlewares/loginValidation'
 import auth from '../middlewares/auth';
 
@@ -24,7 +24,7 @@ const EntryRoute = (app) => {
     app.get('/api/v1/red-flags/:id', auth.verifyUserToken, RedflagController.getSingleRedFlag);
     app.patch('/api/v1/red-flags/:id/comment', auth.verifyUserToken, validateRedFlagReport, RedflagController.editRedFlag);
     app.delete('/api/v1/red-flags/:id', auth.verifyUserToken, RedflagController.deleteRedFlag);
-    app.patch('/api/v1/red-flags/:id/location', auth.verifyUserToken, validateRedFlagReport, RedflagController.changeLocation);
+    app.patch('/api/v1/red-flags/:id/location', auth.verifyUserToken, validateLocation, RedflagController.changeLocation);
 
 
     // Intervention Report API

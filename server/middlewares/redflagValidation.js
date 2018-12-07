@@ -6,8 +6,7 @@ export default (req, res, next) => {
         const locationFilter= /^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?),\s*[-+]?(180(\.0+)?|((1[0-7]\d)|([1-9]?\d))(\.\d+)?)$/
         const values = req.body;
         const required = ['type', 'location', 'title', 'comment'];
-        let errors = {};
-
+        let errors = {}
         for (let i = 0; i < required.length; i += 1) {
             if (!values[required[i]]) { check = false; errors[required[i]] = `${required[i]} is required`; }
         }
@@ -17,12 +16,7 @@ export default (req, res, next) => {
       if(values.type && values.type !== 'red-flag' ){
           errors.type = "report should be a red-flag"; check=false;
       }
-     if(values.location && !values.location.replace(/\s/g, '').length) {
-        errors.location = 'Report location can not be blank'; check = false;
-     }
-     if(values.location && !locationFilter.test(String(values.location))){
-        errors.location = 'Report location does not follow the long, lat format'; check = false;
-     }
+     
      if(values.title && !values.title.replace(/\s/g, '').length) {
         errors.title = 'Title can not be blank'; check = false;
      }
